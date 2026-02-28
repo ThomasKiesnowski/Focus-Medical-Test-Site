@@ -1,0 +1,4 @@
+node_modules/
+temporary screenshots/
+*.ps1
+package-lock.json

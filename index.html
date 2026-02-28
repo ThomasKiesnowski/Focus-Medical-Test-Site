@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus Medical Corporation — Premier GPO for Pain Management, Interventional Radiology &amp; Orthopedics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --deep-teal:   #0D5C6B;
+      --brand-teal:  #1A7A8A;
+      --mid-teal:    #2A9DAA;
+      --brand-green: #5BB89A;
+      --mint-green:  #7FCFB2;
+      --near-black:  #0A0A0A;
+      --charcoal:    #1C2B2D;
+      --text-gray:   #4A5568;
+      --light-gray:  #F4F6F7;
+      --border:      #DDE5E8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; background: #fff; color: var(--charcoal); overflow-x: hidden; }
+
+    /* ── Nav ── */
+    .nav-link {
+      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px;
+      letter-spacing: 0.09em; text-transform: uppercase; color: rgba(255,255,255,0.72);
+      transition: color 0.2s ease; position: relative; padding-bottom: 3px; text-decoration: none;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 1.5px;
+      background: var(--mint-green); transition: width 0.25s ease;
+    }
+    .nav-link:hover { color: #fff; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:focus-visible { outline: 1px solid var(--mint-green); outline-offset: 3px; }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--brand-teal); color: #fff;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px;
+      border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 16px rgba(26,122,138,0.35);
+    }
+    .btn-primary:hover { background: var(--deep-teal); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(26,122,138,0.45); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid var(--mint-green); outline-offset: 3px; }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--brand-teal); border: 2px solid var(--brand-teal);
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 26px;
+      border-radius: 4px; text-decoration: none; cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+    .btn-outline:hover { background: var(--brand-teal); color: #fff; transform: translateY(-1px); }
+    .btn-outline:focus-visible { outline: 2px solid var(--mid-teal); outline-offset: 3px; }
+
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--deep-teal);
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px;
+      border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { background: #f0f9f7; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .btn-white:focus-visible { outline: 2px solid var(--mint-green); outline-offset: 3px; }
+
+    .btn-ghost-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5);
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 26px;
+      border-radius: 4px; text-decoration: none; cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-ghost-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+    .btn-ghost-white:focus-visible { outline: 2px solid var(--mint-green); outline-offset: 3px; }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand-teal);
+    }
+
+    /* ── Cards ── */
+    .prod-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 2px 8px rgba(13,92,107,0.07);
+    }
+    .prod-card:hover { transform: translateY(-5px); border-color: var(--brand-teal); box-shadow: 0 16px 36px rgba(13,92,107,0.15); }
+    .prod-card .img-wrap img { transition: transform 0.4s ease; width: 100%; display: block; }
+    .prod-card:hover .img-wrap img { transform: scale(1.04); }
+    .prod-card-top-bar { height: 4px; background: linear-gradient(90deg, var(--brand-teal), var(--brand-green)); }
+
+    /* ── Cement comparison card ── */
+    .cement-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+      overflow: hidden; transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 16px rgba(13,92,107,0.08);
+    }
+    .cement-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(13,92,107,0.14); }
+
+    /* ── Partnership card ── */
+    .partner-pillar {
+      background: #fff; border: 1px solid var(--border); border-radius: 10px;
+      padding: 36px 28px; transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 2px 8px rgba(13,92,107,0.06);
+    }
+    .partner-pillar:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(13,92,107,0.13); }
+
+    /* ── Icon circle ── */
+    .icon-circle {
+      width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(26,122,138,0.1), rgba(91,184,154,0.08));
+    }
+
+    /* ── Stats ── */
+    .stat-num {
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 48px;
+      line-height: 1; letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--brand-teal), var(--brand-green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* ── GPO price card ── */
+    .price-card {
+      background: #fff; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 36px 32px; display: flex; flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 2px 10px rgba(13,92,107,0.06);
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(13,92,107,0.14); }
+    .price-card.featured {
+      background: linear-gradient(155deg, var(--deep-teal), #0e6a7b, var(--brand-teal));
+      border-color: transparent; color: #fff;
+      box-shadow: 0 8px 32px rgba(13,92,107,0.4);
+    }
+    .price-card.featured:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(13,92,107,0.5); }
+
+    /* ── Trust badge ── */
+    .trust-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+      background: #fff; border: 1px solid var(--border); border-radius: 4px;
+      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px;
+      color: var(--charcoal); white-space: nowrap; box-shadow: 0 1px 4px rgba(13,92,107,0.07);
+    }
+
+    /* ── Scroll reveal ── */
+    .js-loaded .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
+    .js-loaded .d1 { transition-delay: 0.08s; } .js-loaded .d2 { transition-delay: 0.16s; }
+    .js-loaded .d3 { transition-delay: 0.24s; } .js-loaded .d4 { transition-delay: 0.32s; }
+
+    /* ── Hero animate ── */
+    .hi { opacity: 0; transform: translateY(16px); animation: hi 0.7s ease forwards; }
+    .h1 { animation-delay: 0.1s; } .h2 { animation-delay: 0.25s; }
+    .h3 { animation-delay: 0.4s; } .h4 { animation-delay: 0.55s; } .h5 { animation-delay: 0.7s; }
+    @keyframes hi { to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Logo — solid white with teal glow ── */
+    .logo-white { filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127,207,178,0.5)); }
+    .logo-white-hero { filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75)); }
+    @keyframes ring-pulse-a { 0%,100% { opacity: 0.18; } 50% { opacity: 0.06; } }
+    @keyframes ring-pulse-b { 0%,100% { opacity: 0.06; } 50% { opacity: 0.22; } }
+    .ring-a { animation: ring-pulse-a 3s ease-in-out infinite; }
+    .ring-b { animation: ring-pulse-b 3s ease-in-out infinite 1.5s; }
+
+    /* ── Misc ── */
+    .brand-rule { height: 3px; background: linear-gradient(90deg, var(--brand-teal), var(--brand-green), transparent); border: none; }
+    .ft-link { font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.2s ease; text-decoration: none; }
+    .ft-link:hover { color: var(--mint-green); }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #f0f4f5; }
+    ::-webkit-scrollbar-thumb { background: var(--mid-teal); border-radius: 3px; }
+
+    /* Check list item */
+    .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,92,107,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <nav style="max-width:1300px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;">
+      <a href="#" aria-label="Focus Medical Corporation">
+        <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;" />
+      </a>
+      <div style="display:flex;align-items:center;gap:28px;">
+        <a href="#cement" class="nav-link">Cement</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#partnership" class="nav-link">Practice Support</a>
+        <a href="#gpo" class="nav-link">GPO Plans</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="#gpo" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Join the GPO</a>
+    </nav>
+  </header>
+
+
+  <!-- ════════════════════════════════════════════
+       HERO — Light teal gradient
+  ════════════════════════════════════════════ -->
+  <section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:68px;background:linear-gradient(145deg,#0a4f5d 0%,#0d5c6b 35%,#1a7a8a 70%,#2a9daa 100%);">
+    <!-- Decorative blobs -->
+    <div style="position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.15) 0%,transparent 65%);top:-200px;right:-100px;pointer-events:none;"></div>
+    <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);bottom:-100px;left:5%;pointer-events:none;"></div>
+    <!-- Subtle grid lines -->
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
+
+    <div style="position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;width:100%;">
+      <div>
+        <div class="hi h1" style="display:flex;align-items:center;gap:10px;margin-bottom:22px;">
+          <div style="width:28px;height:2px;background:var(--mint-green);border-radius:1px;"></div>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);">Group Purchasing Organization</span>
+        </div>
+
+        <h1 class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(34px,4vw,58px);line-height:1.08;letter-spacing:-0.035em;color:#fff;margin-bottom:22px;">
+          Premier GPO for<br/>
+          Pain Management,<br/>
+          <span style="color:var(--mint-green);">IR &amp; Orthopedics</span>
+        </h1>
+
+        <p class="hi h3" style="font-size:17px;line-height:1.8;color:rgba(255,255,255,0.78);max-width:500px;margin-bottom:36px;">
+          We give your physician office <strong style="color:#fff;font-weight:600;">hospital-level device pricing</strong>, clinical expertise, and practice-building support — so you can focus on patients, not procurement.
+        </p>
+
+        <div class="hi h4" style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#gpo" class="btn-white">
+            View GPO Plans
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#products" class="btn-ghost-white">Explore Products</a>
+        </div>
+      </div>
+
+      <div class="hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
+        <!-- Glow rings — pulsing -->
+        <div class="ring-a" style="position:absolute;width:480px;height:480px;border-radius:50%;border:1.5px solid rgba(127,207,178,0.35);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+        <div class="ring-b" style="position:absolute;width:390px;height:390px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+        <div style="position:absolute;width:315px;height:315px;border-radius:50%;border:1px solid rgba(127,207,178,0.15);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+        <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white-hero" style="width:310px;max-width:100%;position:relative;z-index:2;" />
+      </div>
+    </div>
+
+    <!-- Bottom wave into white -->
+    <div style="position:absolute;bottom:0;left:0;right:0;overflow:hidden;line-height:0;pointer-events:none;z-index:3;">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 L0,40 Q360,80 720,35 Q1080,-10 1440,40 L1440,80 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       TRUST BAR
+  ════════════════════════════════════════════ -->
+  <section style="background:#fff;padding:56px 32px 72px;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin-bottom:52px;">
+        <div><div class="stat-num">6+</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Manufacturer Partners</p></div>
+        <div><div class="stat-num">FDA</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Cleared Portfolio</p></div>
+        <div><div class="stat-num">3</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Specialty Verticals</p></div>
+        <div><div class="stat-num">ISO</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">13485 Certified Partners</p></div>
+      </div>
+
+      <hr class="brand-rule reveal" style="margin-bottom:40px;" />
+
+      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>FDA Cleared Devices</div>
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>ISO 13485 Certified</div>
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Authorized Distributor</div>
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Pain Management Focused</div>
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.75"/><path d="M12 5v2m0 10v2M5 12H3m18 0h-2" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>Interventional Radiology</div>
+        <div class="trust-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Orthopedics</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       CEMENT SECTION — both equal
+  ════════════════════════════════════════════ -->
+  <section id="cement" style="background:var(--light-gray);padding:96px 32px;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div class="reveal" style="text-align:center;margin-bottom:56px;">
+        <span class="eyebrow" style="display:block;margin-bottom:12px;">Vertebroplasty &amp; Kyphoplasty Cement</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);letter-spacing:-0.03em;color:var(--charcoal);margin-bottom:16px;">Two Industry-Leading Cement Solutions</h2>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-gray);max-width:580px;margin:0 auto;">
+          Focus Medical distributes both IZI Medical and G21 bone cements — giving your practice the right formulation for every procedure. More volume per kit. Better margin per case.
+        </p>
+      </div>
+
+      <!-- Key differentiator callout -->
+      <div class="reveal" style="background:linear-gradient(135deg,var(--deep-teal),var(--brand-teal));border-radius:10px;padding:32px 40px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);margin-bottom:8px;">The Focus Medical Advantage</p>
+          <p style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(20px,2.5vw,30px);color:#fff;letter-spacing:-0.03em;line-height:1.2;">Do Two Vertebral Levels for the Cost of One.</p>
+        </div>
+        <div style="text-align:right;">
+          <p style="font-size:14px;color:rgba(255,255,255,0.72);max-width:320px;line-height:1.7;">Our Vertefix MV yields <strong style="color:#fff;">up to 28cc per kit</strong> — while standard competitor kits deliver only 9cc. That's a clinical and financial advantage on every multilevel case.</p>
+        </div>
+      </div>
+
+      <!-- Two cement cards — EQUAL -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+        <!-- IZI Vertefix MV -->
+        <div class="cement-card reveal d1">
+          <div style="height:4px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green));"></div>
+          <div style="overflow:hidden;position:relative;">
+            <img src="https://placehold.co/640x280/E8F4F6/1A7A8A?text=Vertefix+MV+%E2%80%94+IZI+Medical" alt="Vertefix MV bone cement by IZI Medical" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;top:16px;left:16px;background:var(--brand-teal);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;">IZI Medical</div>
+          </div>
+          <div style="padding:32px;">
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:6px;">Vertefix® MV</h3>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:20px;">Medium Viscosity Bone Cement</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">28cc</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Yield</div>
+              </div>
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">18min</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Injection</div>
+              </div>
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">MV</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Viscosity</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px;">
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Infused with Insite™ tracking beads for real-time flow visualization
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Variable-sized barium particles — precise radioscopic control
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Used with Blazer® &amp; Osteo-site® vertebroplasty systems
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Office or hospital — minimally invasive procedure
+              </div>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:12px;padding:10px 22px;">Request Info</a>
+          </div>
+        </div>
+
+        <!-- G21 Cement -->
+        <div class="cement-card reveal d2">
+          <div style="height:4px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green));"></div>
+          <div style="overflow:hidden;position:relative;">
+            <img src="https://www.g-21.it/wp-content/uploads/2023/01/g21-vertebral-consolidation-bone-cements.jpg" alt="G21 vertebral consolidation bone cements" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;top:16px;left:16px;background:var(--brand-green);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;">G21</div>
+          </div>
+          <div style="padding:32px;">
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:6px;">V-STEADY™ / V-FAST™</h3>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:20px;">High &amp; Low Viscosity Vertebroplasty Cement</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">9min+</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Injection</div>
+              </div>
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">FDA</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Approved</div>
+              </div>
+              <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">2</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Formulas</div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:24px;">
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                V-STEADY: high viscosity, long working time — ideal for kyphoplasty
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                V-FAST: low viscosity — suited for multi-level vertebral procedures
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                High contrast agent concentration for optimal radioscopic view
+              </div>
+              <div class="check-item" style="color:var(--charcoal);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Low polymerization temperature — reduced thermal shock risk
+              </div>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:12px;padding:10px 22px;">Request Info</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       PRODUCT SHOWCASE
+  ════════════════════════════════════════════ -->
+  <section id="products" style="background:#fff;padding:96px 32px;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div class="reveal" style="text-align:center;margin-bottom:60px;">
+        <span class="eyebrow" style="display:block;margin-bottom:12px;">Full Product Portfolio</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);letter-spacing:-0.03em;color:var(--charcoal);margin-bottom:16px;">Devices for Every Procedure</h2>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-gray);max-width:540px;margin:0 auto;">
+          All available to GPO members at negotiated pricing — clinical-grade products from manufacturers you trust.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+
+        <!-- IZI Multi-Modality Markers -->
+        <article class="prod-card reveal d1">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=IZI+Multi-Modality+Markers" alt="IZI Medical Multi-Modality Fiducial Markers" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Diagnostic &amp; IR</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Multi-Modality Markers</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Visible on CT, MRI, PET, nuclear medicine, and x-ray. Hydrogel construction — no artifacts, no tissue indentation. 50 markers per jar. Ideal for navigational surgery and IR reference points.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">CT</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MRI</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">PET</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">X-Ray</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- IZI Blazer System -->
+        <article class="prod-card reveal d2">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Blazer+Vertebral+Augmentation+System" alt="IZI Medical Blazer Vertebral Augmentation System" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Spine Solutions</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Blazer® Vertebral Augmentation System</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Minimally invasive vertebral augmentation for pathological compression fractures. Includes the Vertefix MV® cement system. Can be performed in your office or a hospital — no OR required.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Office-Based</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MIS</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- G21 Flex Beads -->
+        <article class="prod-card reveal d3">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://www.g-21.it/wp-content/uploads/2024/02/beads_ok-scaled-600x600.jpg" alt="G21 Flex Beads calcium sulfate bone void filler" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">G21 — Infection Management</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Flex Beads™ — Antibiotic Bone Void Filler</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">100% synthetic calcium sulfate beads for infected and non-infected bone voids. Bioabsorbable, radiopaque, 4–5 minute cure time. Available in 3mm, 4.5mm, and 6mm. Ideal for post-surgical infection management in hip replacement and orthopedic cases.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Bioabsorbable</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Radiopaque</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">ISO 13485</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- Genesis Spine SI Joint -->
+        <article class="prod-card reveal d1">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Genesis+Spine+SI+Joint+Fusion+%E2%80%94+Lateral%2FInlet%2FOutlet" alt="Genesis Spine SI joint fusion hardware" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Genesis Spine (GNSYS) — Spine</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">SI Joint Fusion Hardware</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Sacroiliac joint fusion system with precise screw positioning. Lateral, inlet, and outlet imaging confirms accurate placement — the imaging speaks for itself. Strong option for SI joint pain management programs.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Lateral</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Inlet</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Outlet</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- Elliquence Disc-FX -->
+        <article class="prod-card reveal d2">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Elliquence+Disc-FX%C2%AE+System" alt="Elliquence Disc-FX minimally invasive discectomy system" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Elliquence — Disc &amp; Spine</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Disc-FX® System</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Minimally invasive discectomy for lumbar disc herniation. 3.0mm working portal — less tissue disruption, faster recovery. Disc-FX Mini available for cervical applications. Office or ASC setting.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">3.0mm Portal</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Lumbar &amp; Cervical</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MIS</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- IZI Bone Core Markers -->
+        <article class="prod-card reveal d3">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=IZI+Bone+Core+Markers+%E2%80%94+Oncology" alt="IZI Medical Bone Core Markers for oncology" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Oncology &amp; IR</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Bone Core Biopsy Markers</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Specialized markers for cancer patients undergoing bone biopsy and treatment planning. Supports accurate lesion tracking across imaging modalities throughout a patient's care journey.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Oncology</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Biopsy</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- Inspan ScrewLES -->
+        <article class="prod-card reveal d1">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://images.squarespace-cdn.com/content/v1/5db9b247d0c0d546f3b8f3b3/4e889964-06ff-4d66-b6df-09e96454540b/Inspan+contoured+VEGA.jpg" alt="Inspan ScrewLES interspinous fixation system" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Inspan — Spinal Stabilization</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">ScrewLES® Interspinous Fixation</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">No pedicle screws. No fusion. FDA cleared interspinous fixation via a &lt;2" incision — same-day discharge. Designed for lumbar spinal stenosis with rapid patient return to activity.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">FDA Cleared</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Same-Day Discharge</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">&lt;2" Incision</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- NanoFUSE Biologics -->
+        <article class="prod-card reveal d2">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://images.squarespace-cdn.com/content/v1/5c59b014a56827dc0fd324a9/716cda52-b180-491c-b84c-99478ae4f292/nanofuse+product+linev2.png" alt="NanoFUSE Biologics bone fusion product line" style="height:200px;object-fit:cover;object-position:center;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">NanoFUSE Biologics — Bone Fusion</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">NanoPutty™ / NanoStrip™ / NanoBead™</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">45S5 bioglass bioactive ceramic for superior bone fusion. Available in putty, strip, and bead forms — versatile across spine, orthopedic, and neurosurgery applications. Resorbable, osteoconductive, and biocompatible.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Bioactive Ceramic</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Osteoconductive</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">3 Forms</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+        <!-- Synergy Disc — Synergy Spine Solutions -->
+        <article class="prod-card reveal d3">
+          <div class="prod-card-top-bar"></div>
+          <div class="img-wrap" style="overflow:hidden;">
+            <img src="https://synergyspinesolutions.com/wp-content/uploads/2021/08/synerdisc-0810a.jpg" alt="Synergy Disc cervical artificial disc replacement" style="height:200px;object-fit:cover;" />
+          </div>
+          <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Synergy Spine Solutions — Motion Preservation</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Synergy Disc® Cervical ADR</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">FDA PMA approved cervical artificial disc replacement. Preserves motion at the treated level — avoiding the adjacent level degeneration associated with fusion. Advanced biomechanical design for long-term durability.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">FDA PMA</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Motion Preservation</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Cervical</span>
+            </div>
+            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       PRACTICE PARTNERSHIP — New section
+  ════════════════════════════════════════════ -->
+  <section id="partnership" style="background:var(--light-gray);padding:96px 32px;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:72px;">
+        <div>
+          <span class="eyebrow" style="display:block;margin-bottom:14px;">More Than a Distributor</span>
+          <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,46px);letter-spacing:-0.035em;color:var(--charcoal);line-height:1.1;margin-bottom:20px;">
+            We Help You Build a Stronger Practice
+          </h2>
+          <p style="font-size:16px;line-height:1.8;color:var(--text-gray);margin-bottom:24px;">
+            Focus Medical isn't just a supply chain. We work alongside your team to improve operations, grow patient volume, and position your practice as a leader in your market — while keeping your device costs in check.
+          </p>
+          <p style="font-size:16px;line-height:1.8;color:var(--text-gray);">
+            From procurement to marketing to strategic planning, we're the partner behind the scenes — so you can stay focused on what matters most.
+          </p>
+        </div>
+        <div style="position:relative;border-radius:12px;overflow:hidden;min-height:340px;">
+          <img src="https://synergyspinesolutions.com/wp-content/uploads/2022/03/Surgery-Photo-1024x684.jpg" alt="Spine surgical procedure" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(145deg,rgba(10,79,93,0.85),rgba(26,122,138,0.75));"></div>
+          <div style="position:relative;z-index:1;padding:40px;color:#fff;height:100%;display:flex;flex-direction:column;justify-content:space-between;min-height:340px;">
+            <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mint-green);margin-bottom:16px;">What Our Partners Say</div>
+            <div>
+              <blockquote style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:20px;line-height:1.55;letter-spacing:-0.02em;margin-bottom:20px;">"Having hospital-level pricing changed the economics of our practice. We're doing the same procedures for less — and actually growing."</blockquote>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#fff;">Pain Management Physician</div>
+                  <div style="font-size:13px;color:rgba(255,255,255,0.6);">GPO Premium Member</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar grid -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+        <div class="partner-pillar reveal d1">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8v1m0 8v1m-6.364-4.636l.707.707M17.657 6.343l.707.707M3 12h1m16 0h1M6.343 17.657l.707-.707M17.657 17.657l-.707-.707" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">Hospital-Level Pricing</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">GPO members gain access to the same device pricing as large hospital systems — without the volume requirements. Immediate savings from your very first order.</p>
+        </div>
+
+        <div class="partner-pillar reveal d2">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">SEO &amp; Online Visibility</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">Premium members receive SEO support to help your practice rank for the procedures you perform. More patients finding you online — without advertising spend.</p>
+        </div>
+
+        <div class="partner-pillar reveal d3">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">Website Review &amp; Rebuild</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">Your website is your front door. Premium members receive a full review — and if needed, a rebuild — so your digital presence matches the quality of care you deliver.</p>
+        </div>
+
+        <div class="partner-pillar reveal d1">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">Strategic Consulting</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">Not sure which procedures to add? Which devices generate the best margin? Our consulting sessions help you make data-informed decisions that grow your practice revenue.</p>
+        </div>
+
+        <div class="partner-pillar reveal d2">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">Dedicated Clinical Support</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">Your Focus Medical representative is your clinical partner — not just a sales contact. We're available for product questions, in-service training, and procedural guidance whenever you need it.</p>
+        </div>
+
+        <div class="partner-pillar reveal d3">
+          <div class="icon-circle" style="margin-bottom:18px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;">Streamlined Procurement</h3>
+          <p style="font-size:14px;line-height:1.75;color:var(--text-gray);">One relationship, one invoice, multiple manufacturers. We simplify device procurement so your staff spends less time on vendor management and more time on patients.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       GPO PRICING
+  ════════════════════════════════════════════ -->
+  <section id="gpo" style="background:#fff;padding:96px 32px;">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div class="reveal" style="text-align:center;margin-bottom:60px;">
+        <span class="eyebrow" style="display:block;margin-bottom:12px;">Group Purchasing Organization</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);letter-spacing:-0.03em;color:var(--charcoal);margin-bottom:16px;">GPO Membership Plans</h2>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-gray);max-width:520px;margin:0 auto;">
+          Join and get hospital-level pricing on day one — plus tools to help your practice grow. Cancel anytime.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
+
+        <!-- Tier 1 -->
+        <div class="price-card reveal d1">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);display:block;margin-bottom:8px;">Tier 1</span>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--charcoal);margin-bottom:6px;">Basic Access</h3>
+          <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.04em;color:var(--charcoal);line-height:1;">$199</span>
+            <span style="font-size:14px;color:var(--text-gray);font-weight:600;">/month</span>
+          </div>
+          <p style="font-size:14px;color:var(--text-gray);line-height:1.65;margin-bottom:24px;">Hospital pricing for your office. The foundation of smarter procurement.</p>
+          <hr style="border:none;border-top:1px solid var(--border);margin-bottom:20px;" />
+          <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;">
+            <div class="check-item" style="color:var(--charcoal);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospital-level device pricing</div>
+            <div class="check-item" style="color:var(--charcoal);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Full GPO product catalog access</div>
+            <div class="check-item" style="color:var(--charcoal);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated account representative</div>
+            <div class="check-item" style="color:var(--charcoal);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>FDA-cleared products only</div>
+          </div>
+          <a href="#contact" class="btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="price-card reveal d2" style="background:var(--light-gray);border-color:#D4DDE0;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:8px;">Tier 2</span>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--charcoal);margin-bottom:6px;">Standard</h3>
+          <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.04em;color:var(--charcoal);line-height:1;">$299</span>
+            <span style="font-size:14px;color:var(--text-gray);font-weight:600;">/month</span>
+          </div>
+          <p style="font-size:14px;color:var(--text-gray);line-height:1.65;margin-bottom:24px;">Everything in Basic, plus limited consulting time for growing practices.</p>
+          <hr style="border:none;border-top:1px solid #C8D4D8;margin-bottom:20px;" />
+          <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;">
+            <div class="check-item" style="color:var(--text-gray);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--text-gray);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Basic Access</div>
+            <div class="check-item" style="color:var(--text-gray);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--text-gray);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Limited monthly consulting hours</div>
+            <div class="check-item" style="color:var(--text-gray);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--text-gray);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Additional practice perks</div>
+          </div>
+          <a href="#contact" style="display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-gray);padding:12px 20px;border:2px solid #C4D0D4;border-radius:4px;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='#8EA5AC'" onmouseout="this.style.borderColor='#C4D0D4'">Learn More</a>
+        </div>
+
+        <!-- Tier 3 — Featured -->
+        <div class="price-card featured reveal d3" style="position:relative;">
+          <div style="position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:3px;padding:3px 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">Best Value</div>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);display:block;margin-bottom:8px;">Tier 3</span>
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:6px;">Premium</h3>
+          <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.04em;color:#fff;line-height:1;">$399</span>
+            <span style="font-size:14px;color:rgba(255,255,255,0.6);font-weight:600;">/month</span>
+          </div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.65;margin-bottom:24px;">The full Focus Medical partnership — devices, consulting, and practice growth in one membership.</p>
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.15);margin-bottom:20px;" />
+          <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;">
+            <div class="check-item" style="color:rgba(255,255,255,0.85);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Basic + Standard</div>
+            <div class="check-item" style="color:rgba(255,255,255,0.85);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>SEO support for your practice</div>
+            <div class="check-item" style="color:rgba(255,255,255,0.85);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Website review &amp; potential rebuild</div>
+            <div class="check-item" style="color:rgba(255,255,255,0.85);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Strategic consulting sessions</div>
+            <div class="check-item" style="color:rgba(255,255,255,0.85);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);flex-shrink:0;margin-top:1px;"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support &amp; procurement</div>
+          </div>
+          <a href="#contact" class="btn-white" style="width:100%;justify-content:center;">Join Premium</a>
+          <p style="text-align:center;font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;">Questions? Call us — we'll walk you through it.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       BRAND PARTNERS
+  ════════════════════════════════════════════ -->
+  <section style="background:var(--light-gray);padding:64px 32px;border-top:1px solid var(--border);">
+    <div style="max-width:1300px;margin:0 auto;text-align:center;">
+      <p class="reveal eyebrow" style="margin-bottom:28px;">Authorized Supplier Partners</p>
+      <div class="reveal" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">IZI Medical</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">G21</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mid-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Inspan</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Elliquence</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">NanoFUSE Biologics</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mid-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Synergy Spine Solutions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       CONTACT CTA
+  ════════════════════════════════════════════ -->
+  <section id="contact" style="background:linear-gradient(145deg,var(--deep-teal),#0e6a7b,var(--brand-teal));padding:96px 32px;position:relative;overflow:hidden;">
+    <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;left:-60px;bottom:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;">
+      <div class="reveal">
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);display:block;margin-bottom:14px;">Let's Talk</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,48px);line-height:1.08;letter-spacing:-0.04em;color:#fff;margin-bottom:20px;">Ready to Lower Your Cost Per Procedure?</h2>
+        <p style="font-size:17px;line-height:1.8;color:rgba(255,255,255,0.75);margin-bottom:36px;max-width:460px;">Most practices see savings from their first order. Our team is available to walk you through GPO options and what each membership includes — no pressure, no commitment required to start the conversation.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span style="font-size:16px;color:rgba(255,255,255,0.8);">(800) 555-SPINE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mint-green);"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span style="font-size:16px;color:rgba(255,255,255,0.8);">info@focusmedicalcorp.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:40px;">
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:22px;">Contact Our Team</h3>
+          <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <div>
+                <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">First Name</label>
+                <input type="text" placeholder="Jane" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              </div>
+              <div>
+                <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Last Name</label>
+                <input type="text" placeholder="Smith, MD" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Specialty</label>
+              <select style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;cursor:pointer;appearance:none;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+                <option value="" style="background:#1A7A8A;">Select specialty...</option>
+                <option value="pm" style="background:#1A7A8A;">Pain Management</option>
+                <option value="ir" style="background:#1A7A8A;">Interventional Radiology</option>
+                <option value="ortho" style="background:#1A7A8A;">Orthopedic Surgery</option>
+                <option value="spine" style="background:#1A7A8A;">Spine Surgery</option>
+                <option value="other" style="background:#1A7A8A;">Other</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Email</label>
+              <input type="email" placeholder="jane@yourpractice.com" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <div>
+              <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">How Can We Help?</label>
+              <textarea rows="3" placeholder="Product questions, GPO membership, practice support..." style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;resize:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+            </div>
+            <button type="submit" class="btn-white" style="width:100%;justify-content:center;">
+              Send Message
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer style="background:var(--near-black);padding:56px 32px 28px;border-top:1px solid rgba(255,255,255,0.06);">
+    <div style="max-width:1300px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+        <div>
+          <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:50px;width:auto;margin-bottom:18px;" />
+          <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.42);max-width:270px;margin-bottom:16px;">Premier GPO for Pain Management, Interventional Radiology, and Orthopedics. Hospital-level pricing for your practice.</p>
+          <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-green);">Spine Care For Life</p>
+        </div>
+        <div>
+          <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Products</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;">
+            <li><a href="#cement" class="ft-link">Vertebroplasty Cement</a></li>
+            <li><a href="#products" class="ft-link">Fiducial Markers</a></li>
+            <li><a href="#products" class="ft-link">SI Joint Fusion</a></li>
+            <li><a href="#products" class="ft-link">DiscFX System</a></li>
+            <li><a href="#products" class="ft-link">Flex Beads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:16px;">GPO Plans</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;">
+            <li><a href="#gpo" class="ft-link">Basic — $199/mo</a></li>
+            <li><a href="#gpo" class="ft-link">Standard — $299/mo</a></li>
+            <li><a href="#gpo" class="ft-link">Premium — $399/mo</a></li>
+            <li><a href="#contact" class="ft-link">Join the GPO</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:16px;">Company</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;">
+            <li><a href="#partnership" class="ft-link">Practice Support</a></li>
+            <li><a href="#contact" class="ft-link">Contact Us</a></li>
+            <li><a href="#" class="ft-link">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+        <p style="font-size:13px;color:rgba(255,255,255,0.28);">&copy; 2025 Focus Medical Corporation. All rights reserved.</p>
+        <div style="display:flex;gap:20px;">
+          <a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a>
+          <a href="#" class="ft-link" style="font-size:12px;">Terms of Use</a>
+          <a href="#" class="ft-link" style="font-size:12px;">Regulatory Information</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Only hide-then-reveal if user has JS — avoids blank screenshot
+    document.documentElement.classList.add('js-loaded');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
