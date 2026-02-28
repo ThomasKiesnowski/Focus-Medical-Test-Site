@@ -128,6 +128,32 @@
       background: linear-gradient(135deg, rgba(26,122,138,0.12), rgba(91,184,154,0.08));
     }
     .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; }
+
+    /* ── Mobile nav ── */
+    .nav-mobile-btn { display: none; background: transparent; border: none; cursor: pointer; padding: 6px; color: #fff; line-height: 0; flex-shrink: 0; }
+    .nav-mobile-cta { display: none !important; }
+
+    @media (max-width: 900px) {
+      header nav { padding-left: 20px !important; padding-right: 20px !important; }
+      #nav-cta-desktop { display: none !important; }
+      .nav-mobile-btn { display: flex !important; align-items: center; justify-content: center; }
+      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 68px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 28px 24px !important; gap: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; z-index: 98 !important; overflow-y: auto !important; }
+      #nav-links.open { display: flex !important; }
+      #nav-links .nav-link { font-size: 17px !important; padding: 14px 0 !important; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
+      .nav-mobile-cta { display: inline-flex !important; margin-top: 20px !important; width: 100% !important; justify-content: center !important; }
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-grid { grid-template-columns: 1fr !important; padding: 52px 20px 80px !important; gap: 0 !important; }
+      .hero-img-col { display: none !important; }
+      .r2c { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .r3c { grid-template-columns: 1fr !important; }
+      .callout-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+      .footer-bar { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+      .spec-label { width: 140px !important; }
+    }
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -140,13 +166,19 @@
       <a href="index.html" aria-label="Focus Medical Corporation — Home">
         <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;" />
       </a>
-      <div style="display:flex;align-items:center;gap:28px;">
+      <div id="nav-links" style="display:flex;align-items:center;gap:28px;">
         <a href="index.html#cement" class="nav-link">Cement Portfolio</a>
         <a href="index.html#products" class="nav-link">All Products</a>
         <a href="index.html#gpo" class="nav-link">GPO Plans</a>
         <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
       </div>
-      <a href="index.html#contact" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+      <a href="index.html#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+      <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
     </nav>
   </header>
 
@@ -160,7 +192,7 @@
     <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);bottom:-80px;left:8%;pointer-events:none;"></div>
     <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;"></div>
 
-    <div style="position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;width:100%;">
+    <div class="hero-grid" style="position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;width:100%;">
 
       <!-- Left — Text -->
       <div>
@@ -202,7 +234,7 @@
       </div>
 
       <!-- Right — Product image -->
-      <div class="hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
+      <div class="hero-img-col hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
         <!-- Soft ambient glow -->
         <div style="position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.14) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
 
@@ -279,7 +311,7 @@
   ════════════════════════════════════════════ -->
   <section style="background:var(--light-gray);padding:0 32px 80px;">
     <div style="max-width:1300px;margin:0 auto;">
-      <div class="reveal" style="background:linear-gradient(135deg,var(--deep-teal),var(--brand-teal),#2A9DAA);border-radius:12px;padding:48px 56px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
+      <div class="reveal callout-grid" style="background:linear-gradient(135deg,var(--deep-teal),var(--brand-teal),#2A9DAA);border-radius:12px;padding:48px 56px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px;">
         <div>
           <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mint-green);margin-bottom:12px;">The Focus Medical Advantage</p>
           <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,3.5vw,42px);letter-spacing:-0.035em;color:#fff;line-height:1.12;margin-bottom:16px;">Do Two Vertebral Levels for the Cost of One.</h2>
@@ -307,7 +339,7 @@
         <p style="font-size:16px;line-height:1.8;color:var(--text-gray);max-width:540px;margin:0 auto;">Every specification of Vertefix® MV is designed to give the physician more control, more time, and more consistent results.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
         <div class="feat-card reveal d1">
           <div class="icon-circle" style="margin-bottom:18px;">
@@ -366,7 +398,7 @@
        CLINICAL APPLICATIONS
   ════════════════════════════════════════════ -->
   <section style="background:#fff;padding:96px 32px;">
-    <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="r2c" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
 
       <div class="reveal">
         <span class="eyebrow" style="display:block;margin-bottom:14px;">Indications for Use</span>
@@ -528,7 +560,7 @@
     <div style="position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.1) 0%,transparent 65%);pointer-events:none;"></div>
     <div style="position:absolute;left:-60px;bottom:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);pointer-events:none;"></div>
 
-    <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;">
+    <div class="r2c" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;">
 
       <div class="reveal">
         <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);display:block;margin-bottom:14px;">Get Started Today</span>
@@ -602,7 +634,7 @@
   ════════════════════════════════════════════ -->
   <footer style="background:var(--near-black);padding:48px 32px 28px;border-top:1px solid rgba(255,255,255,0.06);">
     <div style="max-width:1300px;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;">
+      <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;">
         <div>
           <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;margin-bottom:16px;" />
           <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.38);max-width:270px;margin-bottom:12px;">Authorized distributor of Vertefix® MV. GPO pricing available for physician offices, ASCs, and hospital-based pain management programs.</p>
@@ -627,7 +659,7 @@
           </ul>
         </div>
       </div>
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div class="footer-bar" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
         <p style="font-size:12px;color:rgba(255,255,255,0.24);">&copy; 2025 Focus Medical Corporation. Vertefix® is a registered trademark of IZI Medical Products. All rights reserved.</p>
         <div style="display:flex;gap:18px;">
           <a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a>
@@ -643,6 +675,19 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Mobile nav toggle
+    var nt = document.getElementById('nav-toggle');
+    var nl = document.getElementById('nav-links');
+    if (nt && nl) {
+      nt.addEventListener('click', function() {
+        nl.classList.toggle('open');
+        nt.setAttribute('aria-expanded', nl.classList.contains('open'));
+      });
+      nl.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { nl.classList.remove('open'); nt.setAttribute('aria-expanded','false'); });
+      });
+    }
   </script>
 </body>
 </html>

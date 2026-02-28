@@ -189,6 +189,32 @@
 
     /* Check list item */
     .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; }
+
+    /* ── Mobile nav ── */
+    .nav-mobile-btn { display: none; background: transparent; border: none; cursor: pointer; padding: 6px; color: #fff; line-height: 0; flex-shrink: 0; }
+    .nav-mobile-cta { display: none !important; }
+
+    @media (max-width: 900px) {
+      header nav { padding-left: 20px !important; padding-right: 20px !important; }
+      #nav-cta-desktop { display: none !important; }
+      .nav-mobile-btn { display: flex !important; align-items: center; justify-content: center; }
+      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 68px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 28px 24px !important; gap: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; z-index: 98 !important; overflow-y: auto !important; }
+      #nav-links.open { display: flex !important; }
+      #nav-links .nav-link { font-size: 17px !important; padding: 14px 0 !important; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
+      .nav-mobile-cta { display: inline-flex !important; margin-top: 20px !important; width: 100% !important; justify-content: center !important; }
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-grid { grid-template-columns: 1fr !important; padding: 52px 20px 80px !important; gap: 0 !important; }
+      .hero-img-col { display: none !important; }
+      .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+      .r2c { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .r3c { grid-template-columns: 1fr !important; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+      .footer-bar { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+    }
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+      .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+    }
   </style>
 </head>
 <body>
@@ -201,14 +227,20 @@
       <a href="#" aria-label="Focus Medical Corporation">
         <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;" />
       </a>
-      <div style="display:flex;align-items:center;gap:28px;">
+      <div id="nav-links" style="display:flex;align-items:center;gap:28px;">
         <a href="#cement" class="nav-link">Cement</a>
         <a href="#products" class="nav-link">Products</a>
         <a href="#partnership" class="nav-link">Practice Support</a>
         <a href="#gpo" class="nav-link">GPO Plans</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <a href="#gpo" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Join the GPO</a>
       </div>
-      <a href="#gpo" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Join the GPO</a>
+      <a href="#gpo" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Join the GPO</a>
+      <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
     </nav>
   </header>
 
@@ -223,7 +255,7 @@
     <!-- Subtle grid lines -->
     <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
 
-    <div style="position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;width:100%;">
+    <div class="hero-grid" style="position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;width:100%;">
       <div>
         <div class="hi h1" style="display:flex;align-items:center;gap:10px;margin-bottom:22px;">
           <div style="width:28px;height:2px;background:var(--mint-green);border-radius:1px;"></div>
@@ -249,7 +281,7 @@
         </div>
       </div>
 
-      <div class="hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
+      <div class="hero-img-col hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
         <!-- Glow rings — pulsing -->
         <div class="ring-a" style="position:absolute;width:480px;height:480px;border-radius:50%;border:1.5px solid rgba(127,207,178,0.35);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
         <div class="ring-b" style="position:absolute;width:390px;height:390px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
@@ -272,7 +304,7 @@
   ════════════════════════════════════════════ -->
   <section style="background:#fff;padding:56px 32px 72px;">
     <div style="max-width:1300px;margin:0 auto;">
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin-bottom:52px;">
+      <div class="reveal stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin-bottom:52px;">
         <div><div class="stat-num">6+</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Manufacturer Partners</p></div>
         <div><div class="stat-num">FDA</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Cleared Portfolio</p></div>
         <div><div class="stat-num">3</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Specialty Verticals</p></div>
@@ -318,7 +350,7 @@
       </div>
 
       <!-- Two cement cards — EQUAL -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
 
         <!-- IZI Vertefix MV -->
         <div class="cement-card reveal d1">
@@ -434,7 +466,7 @@
         </p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+      <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
 
         <!-- IZI Multi-Modality Markers -->
         <article class="prod-card reveal d1">
@@ -616,7 +648,7 @@
   ════════════════════════════════════════════ -->
   <section id="partnership" style="background:var(--light-gray);padding:96px 32px;">
     <div style="max-width:1300px;margin:0 auto;">
-      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:72px;">
+      <div class="reveal r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:72px;">
         <div>
           <span class="eyebrow" style="display:block;margin-bottom:14px;">More Than a Distributor</span>
           <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,46px);letter-spacing:-0.035em;color:var(--charcoal);line-height:1.1;margin-bottom:20px;">
@@ -651,7 +683,7 @@
       </div>
 
       <!-- Pillar grid -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
 
         <div class="partner-pillar reveal d1">
           <div class="icon-circle" style="margin-bottom:18px;">
@@ -719,7 +751,7 @@
         </p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
+      <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
 
         <!-- Tier 1 -->
         <div class="price-card reveal d1">
@@ -828,7 +860,7 @@
     <div style="position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.1) 0%,transparent 70%);pointer-events:none;"></div>
     <div style="position:absolute;left:-60px;bottom:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);pointer-events:none;"></div>
 
-    <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;">
+    <div class="r2c" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;">
       <div class="reveal">
         <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);display:block;margin-bottom:14px;">Let's Talk</span>
         <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,48px);line-height:1.08;letter-spacing:-0.04em;color:#fff;margin-bottom:20px;">Ready to Lower Your Cost Per Procedure?</h2>
@@ -898,7 +930,7 @@
   ════════════════════════════════════════════ -->
   <footer style="background:var(--near-black);padding:56px 32px 28px;border-top:1px solid rgba(255,255,255,0.06);">
     <div style="max-width:1300px;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
         <div>
           <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:50px;width:auto;margin-bottom:18px;" />
           <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.42);max-width:270px;margin-bottom:16px;">Premier GPO for Pain Management, Interventional Radiology, and Orthopedics. Hospital-level pricing for your practice.</p>
@@ -932,7 +964,7 @@
           </ul>
         </div>
       </div>
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+      <div class="footer-bar" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
         <p style="font-size:13px;color:rgba(255,255,255,0.28);">&copy; 2025 Focus Medical Corporation. All rights reserved.</p>
         <div style="display:flex;gap:20px;">
           <a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a>
@@ -950,6 +982,19 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Mobile nav toggle
+    var nt = document.getElementById('nav-toggle');
+    var nl = document.getElementById('nav-links');
+    if (nt && nl) {
+      nt.addEventListener('click', function() {
+        nl.classList.toggle('open');
+        nt.setAttribute('aria-expanded', nl.classList.contains('open'));
+      });
+      nl.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { nl.classList.remove('open'); nt.setAttribute('aria-expanded','false'); });
+      });
+    }
   </script>
 </body>
 </html>
