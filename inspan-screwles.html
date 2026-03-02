@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScrewLES® Interspinous Fixation System — Focus Medical Corporation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--deep-teal:#0D5C6B;--brand-teal:#1A7A8A;--mid-teal:#2A9DAA;--brand-green:#5BB89A;--mint-green:#7FCFB2;--near-black:#0A0A0A;--charcoal:#1C2B2D;--text-gray:#4A5568;--light-gray:#F4F6F7;--border:#DDE5E8;}
+    *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--charcoal);overflow-x:hidden;}
+    .nav-link{font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.72);transition:color 0.2s ease;position:relative;padding-bottom:3px;text-decoration:none;}
+    .nav-link::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1.5px;background:var(--mint-green);transition:width 0.25s ease;}
+    .nav-link:hover{color:#fff;}.nav-link:hover::after{width:100%;}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--deep-teal);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s ease,transform 0.15s ease,box-shadow 0.15s ease;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+    .btn-white:hover{background:#f0f9f7;transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brand-teal);border:2px solid var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 26px;border-radius:4px;text-decoration:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease,transform 0.15s ease;}
+    .btn-outline:hover{background:var(--brand-teal);color:#fff;transform:translateY(-1px);}
+    .btn-ghost-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 26px;border-radius:4px;text-decoration:none;cursor:pointer;transition:border-color 0.2s ease,background 0.2s ease,transform 0.15s ease;}
+    .btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,0.1);transform:translateY(-1px);}
+    .logo-white{filter:brightness(0) invert(1) drop-shadow(0 0 6px rgba(127,207,178,0.5));}
+    .eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brand-teal);}
+    .feat-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 24px;transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;box-shadow:0 2px 8px rgba(13,92,107,0.06);}
+    .feat-card:hover{transform:translateY(-4px);border-color:var(--brand-teal);box-shadow:0 14px 32px rgba(13,92,107,0.13);}
+    .spec-row{display:flex;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);gap:16px;}
+    .spec-row:last-child{border-bottom:none;}
+    .spec-label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-gray);width:200px;flex-shrink:0;}
+    .spec-value{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);}
+    .js-loaded .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .js-loaded .reveal.visible{opacity:1;transform:translateY(0);}
+    .js-loaded .d1{transition-delay:0.08s;}.js-loaded .d2{transition-delay:0.16s;}.js-loaded .d3{transition-delay:0.24s;}.js-loaded .d4{transition-delay:0.32s;}.js-loaded .d5{transition-delay:0.40s;}.js-loaded .d6{transition-delay:0.48s;}
+    .hi{opacity:0;transform:translateY(16px);animation:hi 0.7s ease forwards;}
+    .h1{animation-delay:0.1s;}.h2{animation-delay:0.25s;}.h3{animation-delay:0.4s;}.h4{animation-delay:0.55s;}
+    @keyframes hi{to{opacity:1;transform:translateY(0);}}
+    .brand-rule{height:3px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green),transparent);border:none;}
+    .ft-link{font-size:14px;color:rgba(255,255,255,0.5);transition:color 0.2s ease;text-decoration:none;}
+    .ft-link:hover{color:var(--mint-green);}
+    .icon-circle{width:52px;height:52px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(26,122,138,0.12),rgba(91,184,154,0.08));}
+    .check-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;}
+    .nav-mobile-btn{display:none;background:transparent;border:none;cursor:pointer;padding:6px;color:#fff;line-height:0;flex-shrink:0;}
+    .nav-mobile-cta{display:none !important;}
+    @media(max-width:900px){header nav{padding-left:20px !important;padding-right:20px !important;}#nav-cta-desktop{display:none !important;}.nav-mobile-btn{display:flex !important;align-items:center;justify-content:center;}#nav-links{display:none !important;flex-direction:column !important;align-items:flex-start !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;bottom:0 !important;background:rgba(9,54,63,0.98) !important;backdrop-filter:blur(16px) !important;padding:28px 24px !important;gap:0 !important;border-top:1px solid rgba(255,255,255,0.1) !important;z-index:98 !important;overflow-y:auto !important;}#nav-links.open{display:flex !important;}#nav-links .nav-link{font-size:17px !important;padding:14px 0 !important;width:100%;border-bottom:1px solid rgba(255,255,255,0.07) !important;}.nav-mobile-cta{display:inline-flex !important;margin-top:20px !important;width:100% !important;justify-content:center !important;}section{padding-left:20px !important;padding-right:20px !important;}.hero-grid{grid-template-columns:1fr !important;padding:52px 20px 80px !important;gap:0 !important;}.hero-img-col{display:none !important;}.r2c{grid-template-columns:1fr !important;gap:40px !important;}.r3c{grid-template-columns:1fr !important;}.callout-grid{grid-template-columns:1fr !important;gap:24px !important;}.footer-grid{grid-template-columns:1fr 1fr !important;gap:28px !important;}.footer-bar{flex-direction:column !important;align-items:flex-start !important;gap:8px !important;}.spec-label{width:140px !important;}}
+    @media(max-width:520px){.footer-grid{grid-template-columns:1fr !important;}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,92,107,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <nav style="max-width:1300px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;">
+    <a href="index.html"><img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;" /></a>
+    <div id="nav-links" style="display:flex;align-items:center;gap:28px;">
+      <a href="index.html#cement" class="nav-link">Cement Portfolio</a>
+      <a href="index.html#products" class="nav-link">All Products</a>
+      <a href="index.html#gpo" class="nav-link">GPO Plans</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <a href="index.html#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+    </div>
+    <a href="index.html#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+    <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 30%,#0d5c6b 60%,#1a7a8a 100%);padding-top:68px;min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:0.04;pointer-events:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)"/></svg>
+  </div>
+  <div style="position:absolute;top:-10%;right:-5%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-20%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,157,170,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="hero-grid" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;align-items:center;gap:64px;padding:88px 32px 100px;width:100%;position:relative;z-index:1;">
+    <div>
+      <div class="hi h1" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+        <a href="index.html" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;">Focus Medical</a>
+        <span style="color:rgba(255,255,255,0.25);font-size:11px;">/</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);">Spinal Stabilization</span>
+      </div>
+
+      <div class="hi h1" style="display:inline-block;background:rgba(91,184,154,0.15);border:1px solid rgba(91,184,154,0.3);border-radius:4px;padding:5px 12px;margin-bottom:20px;">
+        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);">Inspan — Minimally Invasive Spine</span>
+      </div>
+
+      <h1 class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(38px,5vw,62px);line-height:1.07;letter-spacing:-0.03em;color:#fff;margin-bottom:12px;">
+        ScrewLES®
+      </h1>
+      <p class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(16px,2vw,20px);color:var(--mint-green);letter-spacing:0.01em;margin-bottom:24px;">
+        Interspinous Fixation System
+      </p>
+
+      <p class="hi h3" style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.72);max-width:520px;margin-bottom:36px;">
+        No pedicle screws. No laminectomy. FDA cleared interspinous fixation through a less-than-2-inch incision — with same-day discharge and a 10-year track record of zero device failures.
+      </p>
+
+      <div class="hi h3" style="display:flex;gap:0;margin-bottom:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;max-width:460px;">
+        <div style="flex:1;padding:18px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:#fff;line-height:1;">&lt;2"</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Incision</div>
+        </div>
+        <div style="flex:1;padding:18px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:var(--mint-green);line-height:1;">10<span style="font-size:15px;font-weight:600;"> yr</span></div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Track Record</div>
+        </div>
+        <div style="flex:1;padding:18px 20px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.1;">FDA</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Cleared</div>
+        </div>
+      </div>
+
+      <div class="hi h4" style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="index.html#contact" class="btn-white">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Request Pricing
+        </a>
+        <a href="#specs" class="btn-ghost-white">View Specs</a>
+      </div>
+    </div>
+
+    <!-- Floating product card -->
+    <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
+      <div class="hi h3" style="background:#fff;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.12);padding:28px;max-width:380px;width:100%;position:relative;">
+        <div style="position:absolute;top:-14px;right:20px;background:var(--deep-teal);border-radius:6px;padding:5px 14px;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">FDA Cleared — T1 to S1</span>
+        </div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5db9b247d0c0d546f3b8f3b3/4e889964-06ff-4d66-b6df-09e96454540b/Inspan+contoured+VEGA.jpg" alt="Inspan ScrewLES Interspinous Fixation" style="width:100%;height:280px;object-fit:cover;border-radius:10px;margin-bottom:18px;" />
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);line-height:1.2;">ScrewLES®</p>
+            <p style="font-size:12px;color:var(--text-gray);margin-top:3px;">Interspinous Fixation System</p>
+          </div>
+          <div style="display:flex;gap:5px;flex-direction:column;align-items:flex-end;">
+            <div style="background:rgba(13,92,107,0.08);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--deep-teal);">No Screws</div>
+            <div style="background:rgba(91,184,154,0.12);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--brand-green);">Same-Day DC</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section style="background:var(--charcoal);padding:0 32px;">
+  <div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:40px;padding:20px 0;flex-wrap:wrap;">
+    <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);flex-shrink:0;">Manufacturer</span>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--brand-green);flex-shrink:0;"></div>
+      <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,0.85);letter-spacing:0.04em;">Inspan Medical</span>
+    </div>
+    <div style="width:1px;height:24px;background:rgba(255,255,255,0.1);flex-shrink:0;"></div>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">FDA Cleared (2010)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">T1–S1 Cleared</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">Zero Device Failures</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">ASC &amp; Office-Based</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR CALLOUT -->
+<section style="background:var(--light-gray);padding:80px 32px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="callout-grid reveal d1" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div>
+        <hr class="brand-rule" style="width:48px;margin-bottom:22px;" />
+        <p class="eyebrow" style="margin-bottom:14px;">Key Differentiator</p>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,3.5vw,40px);line-height:1.12;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:20px;">
+          No Screws.<br />
+          <span style="color:var(--brand-teal);">No Fusion. No Overnight Stay.</span>
+        </h2>
+        <p style="font-size:15px;line-height:1.8;color:var(--text-gray);margin-bottom:28px;">
+          ScrewLES® takes a fundamentally different approach to lumbar spinal stenosis — achieving stable interspinous fixation without pedicle screws, laminectomy, or general anesthesia. A less-than-2-inch incision and ~1-hour procedure means your patients go home the same day and return to activity faster.
+        </p>
+        <a href="index.html#contact" class="btn-outline">Request Product Info</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--brand-teal);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);">
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:6px;">No Pedicle Screws</p>
+          <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">Eliminates the risks associated with pedicle screw placement — no nerve root exposure, no trajectory errors, no screw-related complications.</p>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--brand-green);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);">
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:6px;">10-Year Track Record</p>
+          <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">FDA cleared since 2010 with zero device failures reported. Proven durability across thousands of implanted cases in ASC and office settings.</p>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--mid-teal);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);">
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:6px;">ASC Revenue Opportunity</p>
+          <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">~1-hour procedure with same-day discharge enables high case throughput in an ASC setting — without the overhead of a hospital OR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 FEATURE CARDS -->
+<section style="padding:80px 32px;background:#fff;">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="reveal d1" style="text-align:center;margin-bottom:52px;">
+      <hr class="brand-rule" style="width:40px;margin:0 auto 18px;" />
+      <p class="eyebrow" style="margin-bottom:12px;">Product Features</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);letter-spacing:-0.02em;color:var(--charcoal);">Less Invasive. Equally Effective.</h2>
+    </div>
+
+    <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <div class="feat-card reveal d1">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">No Pedicle Screws Required</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Interspinous fixation achieves stability without pedicle screw placement — reducing operative risk and eliminating screw-related complications entirely.</p>
+      </div>
+
+      <div class="feat-card reveal d2">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">~1-Hour Procedure</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Short operative time supports high case volume in an ASC or office-based setting. Patients return home the same day with minimal recovery requirements.</p>
+      </div>
+
+      <div class="feat-card reveal d3">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Less Than 2" Incision</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Minimally invasive approach preserves musculature and minimizes soft tissue disruption — less pain, faster healing, and fewer post-op complications.</p>
+      </div>
+
+      <div class="feat-card reveal d4">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Zero Device Failures (10 Years)</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">FDA cleared since 2010 with zero reported device failures. The implant's structural integrity has been proven across a decade of real-world clinical use.</p>
+      </div>
+
+      <div class="feat-card reveal d5">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Full T1–S1 Coverage</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">FDA cleared for use at all thoracolumbar and lumbosacral levels from T1 to S1 — broad applicability for the full range of lumbar spinal stenosis cases.</p>
+      </div>
+
+      <div class="feat-card reveal d6">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Local or General Anesthesia</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Flexible anesthesia options accommodate a wider patient population — including patients who are poor candidates for general anesthesia in traditional fusion procedures.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL APPLICATIONS + SPECS -->
+<section id="specs" style="padding:80px 32px;background:var(--light-gray);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+
+      <div class="reveal d1">
+        <hr class="brand-rule" style="width:40px;margin-bottom:20px;" />
+        <p class="eyebrow" style="margin-bottom:12px;">Clinical Applications</p>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:28px;">When to Use ScrewLES®</h2>
+
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Lumbar spinal stenosis (primary indication)</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Patients failed conservative treatment (&ge;6 months)</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Neurogenic claudication</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Patients preferring motion preservation over fusion</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Poor candidates for open fusion surgery</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">ASC-based spine programs seeking efficient procedures</span>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;">
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px;">Surgical Approach</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="check-item">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
+              <span style="font-size:13px;color:var(--text-gray);">Posterior midline, less-than-2-inch incision</span>
+            </div>
+            <div class="check-item">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
+              <span style="font-size:13px;color:var(--text-gray);">No laminectomy or bone removal required</span>
+            </div>
+            <div class="check-item">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
+              <span style="font-size:13px;color:var(--text-gray);">Local or general anesthesia compatible</span>
+            </div>
+            <div class="check-item">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
+              <span style="font-size:13px;color:var(--text-gray);">Same-day discharge from ASC or office</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <hr class="brand-rule" style="width:40px;margin-bottom:20px;" />
+        <p class="eyebrow" style="margin-bottom:12px;">Specifications</p>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:28px;">Product Specifications</h2>
+
+        <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px 24px;box-shadow:0 2px 12px rgba(13,92,107,0.05);">
+          <div class="spec-row">
+            <span class="spec-label">System</span>
+            <span class="spec-value">ScrewLES® Interspinous Fixation</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Levels</span>
+            <span class="spec-value">T1 through S1 (all levels)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Incision</span>
+            <span class="spec-value">&lt;2 inches (posterior midline)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Procedure Time</span>
+            <span class="spec-value">~1 hour</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Anesthesia</span>
+            <span class="spec-value">Local or General</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Setting</span>
+            <span class="spec-value">ASC or Office-Based</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Discharge</span>
+            <span class="spec-value">Same Day</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">FDA Status</span>
+            <span class="spec-value">Cleared (510k, 2010)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Device Failures</span>
+            <span class="spec-value">Zero (10-year record)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Manufacturer</span>
+            <span class="spec-value">Inspan Medical</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);padding:88px 32px;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-15%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1;" class="reveal d1">
+    <hr class="brand-rule" style="width:40px;margin:0 auto 22px;" />
+    <p class="eyebrow" style="color:var(--mint-green);margin-bottom:14px;">Get Pricing Through Focus Medical</p>
+    <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin-bottom:18px;">
+      Ready to Add ScrewLES®<br />to Your Program?
+    </h2>
+    <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;">
+      Focus Medical Corporation is the authorized distributor for Inspan ScrewLES. Contact us to discuss pricing, GPO tiers, and clinical support for your spine program.
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="index.html#contact" class="btn-white">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Request Pricing
+      </a>
+      <a href="index.html#gpo" class="btn-ghost-white">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        View GPO Plans
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--near-black);padding:48px 32px 28px;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;">
+      <div>
+        <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;margin-bottom:16px;" />
+        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.38);max-width:270px;margin-bottom:12px;">Authorized distributor. GPO pricing available for physician offices, ASCs, and hospital-based pain management programs.</p>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-green);">Spine Care For Life</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;">Products</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li><a href="index.html#products" class="ft-link">All Products</a></li>
+          <li><a href="vertefix-mv.html" class="ft-link">Vertefix® MV</a></li>
+          <li><a href="si-joint.html" class="ft-link">SIros® SI Joint</a></li>
+          <li><a href="disc-fx.html" class="ft-link">Disc-FX® System</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;">Focus Medical</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li><a href="index.html" class="ft-link">Home</a></li>
+          <li><a href="index.html#gpo" class="ft-link">GPO Plans</a></li>
+          <li><a href="index.html#contact" class="ft-link">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.24);">© 2025 Focus Medical Corporation. All rights reserved.</p>
+      <div style="display:flex;gap:18px;"><a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a><a href="#" class="ft-link" style="font-size:12px;">Regulatory Information</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js-loaded');
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  var nt=document.getElementById('nav-toggle');var nl=document.getElementById('nav-links');
+  if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open');nt.setAttribute('aria-expanded',nl.classList.contains('open'));});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');nt.setAttribute('aria-expanded','false');});});}
+</script>
+
+</body>
+</html>

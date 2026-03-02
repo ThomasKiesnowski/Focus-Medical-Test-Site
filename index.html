@@ -173,11 +173,33 @@
 
     /* ── Logo — solid white with teal glow ── */
     .logo-white { filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127,207,178,0.5)); }
-    .logo-white-hero { filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75)); }
-    @keyframes ring-pulse-a { 0%,100% { opacity: 0.18; } 50% { opacity: 0.06; } }
-    @keyframes ring-pulse-b { 0%,100% { opacity: 0.06; } 50% { opacity: 0.22; } }
-    .ring-a { animation: ring-pulse-a 3s ease-in-out infinite; }
-    .ring-b { animation: ring-pulse-b 3s ease-in-out infinite 1.5s; }
+    .logo-white-hero {
+      filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75));
+      animation: logo-breathe 3.5s ease-in-out infinite;
+    }
+    @keyframes logo-breathe {
+      0%, 100% { filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75)) drop-shadow(0 0 8px rgba(255,255,255,0.2)); }
+      50%       { filter: brightness(0) invert(1) drop-shadow(0 0 56px rgba(127,207,178,1.0)) drop-shadow(0 0 24px rgba(255,255,255,0.5)); }
+    }
+
+    /* ── Hero pulse waves ── */
+    .wave-ring {
+      position: absolute;
+      width: 326px;
+      height: 326px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.72);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: none;
+      opacity: 0;
+      animation: pulse-wave 3.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    }
+    @keyframes pulse-wave {
+      0%   { transform: translate(-50%, -50%) scale(1.0); opacity: 0.75; }
+      65%  { opacity: 0.12; }
+      100% { transform: translate(-50%, -50%) scale(2.15); opacity: 0; }
+    }
 
     /* ── Misc ── */
     .brand-rule { height: 3px; background: linear-gradient(90deg, var(--brand-teal), var(--brand-green), transparent); border: none; }
@@ -282,10 +304,13 @@
       </div>
 
       <div class="hero-img-col hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
-        <!-- Glow rings — pulsing -->
-        <div class="ring-a" style="position:absolute;width:480px;height:480px;border-radius:50%;border:1.5px solid rgba(127,207,178,0.35);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-        <div class="ring-b" style="position:absolute;width:390px;height:390px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-        <div style="position:absolute;width:315px;height:315px;border-radius:50%;border:1px solid rgba(127,207,178,0.15);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+        <!-- Radiating pulse waves -->
+        <div class="wave-ring" style="animation-delay:0s;"></div>
+        <div class="wave-ring" style="animation-delay:0.8s;"></div>
+        <div class="wave-ring" style="animation-delay:1.6s;"></div>
+        <div class="wave-ring" style="animation-delay:2.4s;"></div>
+        <!-- Inner static glow -->
+        <div style="position:absolute;width:370px;height:370px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.13) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
         <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white-hero" style="width:310px;max-width:100%;position:relative;z-index:2;" />
       </div>
     </div>
@@ -356,7 +381,7 @@
         <div class="cement-card reveal d1">
           <div style="height:4px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green));"></div>
           <div style="overflow:hidden;position:relative;">
-            <img src="https://placehold.co/640x280/E8F4F6/1A7A8A?text=Vertefix+MV+%E2%80%94+IZI+Medical" alt="Vertefix MV bone cement by IZI Medical" style="width:100%;height:240px;object-fit:cover;display:block;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+            <img src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/c1593c56-58dc-432b-9644-e74cd847e8d3/IZIMed_Cement_Pkg_VertefixMV+whole3.jpg" alt="Vertefix MV bone cement by IZI Medical" style="width:100%;height:240px;object-fit:contain;background:#f4f6f7;display:block;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
             <div style="position:absolute;top:16px;left:16px;background:var(--brand-teal);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;">IZI Medical</div>
           </div>
           <div style="padding:32px;">
@@ -396,7 +421,7 @@
                 Office or hospital — minimally invasive procedure
               </div>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:12px;padding:10px 22px;">Request Info</a>
+            <a href="vertefix-mv.html" class="btn-outline" style="font-size:12px;padding:10px 22px;">Learn More</a>
           </div>
         </div>
 
@@ -444,7 +469,7 @@
                 Low polymerization temperature — reduced thermal shock risk
               </div>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:12px;padding:10px 22px;">Request Info</a>
+            <a href="g21-cement.html" class="btn-outline" style="font-size:12px;padding:10px 22px;">Learn More</a>
           </div>
         </div>
 
@@ -472,7 +497,7 @@
         <article class="prod-card reveal d1">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=IZI+Multi-Modality+Markers" alt="IZI Medical Multi-Modality Fiducial Markers" style="height:200px;object-fit:cover;" />
+            <img src="http://static1.squarespace.com/static/5cba31329b8fe86db05fc0eb/5cc49c9b08522967b533805f/5cd5deefc8302533c5abe2e1/1731315347348/izimed_multi_modality_fiducial_markers.png" alt="IZI Medical Multi-Modality Fiducial Markers" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Diagnostic &amp; IR</span>
@@ -484,7 +509,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">PET</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">X-Ray</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="izi-markers.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -492,7 +517,7 @@
         <article class="prod-card reveal d2">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Blazer+Vertebral+Augmentation+System" alt="IZI Medical Blazer Vertebral Augmentation System" style="height:200px;object-fit:cover;" />
+            <img src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/1558284685206-5LZLMLRLL0MDROT55IN8/Blazer_C_Full_Product.png" alt="IZI Medical Blazer Vertebral Augmentation System" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Spine Solutions</span>
@@ -502,7 +527,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Office-Based</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MIS</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="blazer.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -521,7 +546,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Radiopaque</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">ISO 13485</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="g21-flex-beads.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -529,7 +554,7 @@
         <article class="prod-card reveal d1">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Genesis+Spine+SI+Joint+Fusion+%E2%80%94+Lateral%2FInlet%2FOutlet" alt="Genesis Spine SI joint fusion hardware" style="height:200px;object-fit:cover;" />
+            <img src="https://www.genesysspine.com/wp-content/uploads/2021/01/900x900-Lateral-Sacroiliac-Joint-Fusion-%E2%80%93-SIros-3D-Printed.png" alt="Genesis Spine SI joint fusion hardware" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Genesis Spine (GNSYS) — Spine</span>
@@ -540,7 +565,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Inlet</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Outlet</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="si-joint.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -548,7 +573,7 @@
         <article class="prod-card reveal d2">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=Elliquence+Disc-FX%C2%AE+System" alt="Elliquence Disc-FX minimally invasive discectomy system" style="height:200px;object-fit:cover;" />
+            <img src="https://www.elliquence.com/wp-content/uploads/2018/08/Disc-FX-Banner-2018.jpg" alt="Elliquence Disc-FX minimally invasive discectomy system" style="height:200px;object-fit:cover;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Elliquence — Disc &amp; Spine</span>
@@ -559,7 +584,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Lumbar &amp; Cervical</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MIS</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="disc-fx.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -577,7 +602,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Oncology</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Biopsy</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="bone-core-markers.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -596,7 +621,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Same-Day Discharge</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">&lt;2" Incision</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="inspan-screwles.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -615,7 +640,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Osteoconductive</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">3 Forms</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="nanofuse.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -634,7 +659,7 @@
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Motion Preservation</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Cervical</span>
             </div>
-            <a href="#contact" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Request Info</a>
+            <a href="synergy-disc.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -884,37 +909,43 @@
       <div class="reveal d2">
         <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:40px;">
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:22px;">Contact Our Team</h3>
-          <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:14px;">
+          <div id="form-success" style="display:none;background:rgba(91,184,154,0.15);border:1px solid rgba(91,184,154,0.5);border-radius:8px;padding:28px;text-align:center;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="color:#7FCFB2;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:6px;">Message Sent!</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.7);">We'll be in touch shortly.</p>
+          </div>
+          <form id="contact-form" style="display:flex;flex-direction:column;gap:14px;">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div>
                 <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">First Name</label>
-                <input type="text" placeholder="Jane" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+                <input type="text" name="first_name" placeholder="Jane" required style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
               </div>
               <div>
                 <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Last Name</label>
-                <input type="text" placeholder="Smith, MD" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+                <input type="text" name="last_name" placeholder="Smith, MD" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
               </div>
             </div>
             <div>
               <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Specialty</label>
-              <select style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;cursor:pointer;appearance:none;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+              <select name="specialty" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;cursor:pointer;appearance:none;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
                 <option value="" style="background:#1A7A8A;">Select specialty...</option>
-                <option value="pm" style="background:#1A7A8A;">Pain Management</option>
-                <option value="ir" style="background:#1A7A8A;">Interventional Radiology</option>
-                <option value="ortho" style="background:#1A7A8A;">Orthopedic Surgery</option>
-                <option value="spine" style="background:#1A7A8A;">Spine Surgery</option>
-                <option value="other" style="background:#1A7A8A;">Other</option>
+                <option value="Pain Management" style="background:#1A7A8A;">Pain Management</option>
+                <option value="Interventional Radiology" style="background:#1A7A8A;">Interventional Radiology</option>
+                <option value="Orthopedic Surgery" style="background:#1A7A8A;">Orthopedic Surgery</option>
+                <option value="Spine Surgery" style="background:#1A7A8A;">Spine Surgery</option>
+                <option value="Other" style="background:#1A7A8A;">Other</option>
               </select>
             </div>
             <div>
               <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Email</label>
-              <input type="email" placeholder="jane@yourpractice.com" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              <input type="email" name="email" placeholder="jane@yourpractice.com" required style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
             </div>
             <div>
               <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">How Can We Help?</label>
-              <textarea rows="3" placeholder="Product questions, GPO membership, practice support..." style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;resize:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+              <textarea name="message" rows="3" placeholder="Product questions, GPO membership, practice support..." style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;resize:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
             </div>
-            <button type="submit" class="btn-white" style="width:100%;justify-content:center;">
+            <div id="form-error" style="display:none;background:rgba(220,50,50,0.15);border:1px solid rgba(220,50,50,0.4);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.8);">Something went wrong. Please try again or email us directly.</div>
+            <button type="submit" id="contact-submit" class="btn-white" style="width:100%;justify-content:center;">
               Send Message
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
@@ -993,6 +1024,50 @@
       });
       nl.querySelectorAll('a').forEach(function(a) {
         a.addEventListener('click', function() { nl.classList.remove('open'); nt.setAttribute('aria-expanded','false'); });
+      });
+    }
+
+    // Contact form — FormSubmit.co AJAX
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('contact-submit');
+        var errDiv = document.getElementById('form-error');
+        btn.disabled = true;
+        btn.innerHTML = 'Sending&hellip;';
+        errDiv.style.display = 'none';
+
+        var data = {
+          first_name: contactForm.querySelector('[name=first_name]').value,
+          last_name: contactForm.querySelector('[name=last_name]').value,
+          specialty: contactForm.querySelector('[name=specialty]').value,
+          email: contactForm.querySelector('[name=email]').value,
+          message: contactForm.querySelector('[name=message]').value,
+          _subject: 'New Inquiry — Focus Medical Website'
+        };
+
+        fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.success === 'true' || d.success === true) {
+            contactForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.disabled = false;
+            btn.innerHTML = 'Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            errDiv.style.display = 'block';
+          }
+        })
+        .catch(function() {
+          btn.disabled = false;
+          btn.innerHTML = 'Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          errDiv.style.display = 'block';
+        });
       });
     }
   </script>

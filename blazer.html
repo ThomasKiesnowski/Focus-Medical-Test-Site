@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blazer-C® Vertebral Augmentation System — Spine Solutions | Focus Medical Corporation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--deep-teal:#0D5C6B;--brand-teal:#1A7A8A;--mid-teal:#2A9DAA;--brand-green:#5BB89A;--mint-green:#7FCFB2;--near-black:#0A0A0A;--charcoal:#1C2B2D;--text-gray:#4A5568;--light-gray:#F4F6F7;--border:#DDE5E8;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--charcoal);overflow-x:hidden;}
+    .nav-link{font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.72);transition:color 0.2s ease;position:relative;padding-bottom:3px;text-decoration:none;}
+    .nav-link::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1.5px;background:var(--mint-green);transition:width 0.25s ease;}
+    .nav-link:hover{color:#fff;}.nav-link:hover::after{width:100%;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--brand-teal);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s ease,transform 0.15s ease,box-shadow 0.2s ease;box-shadow:0 4px 16px rgba(26,122,138,0.35);}
+    .btn-primary:hover{background:var(--deep-teal);transform:translateY(-1px);}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--deep-teal);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;transition:background 0.15s ease,transform 0.15s ease,box-shadow 0.15s ease;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+    .btn-white:hover{background:#f0f9f7;transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brand-teal);border:2px solid var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 26px;border-radius:4px;text-decoration:none;cursor:pointer;transition:background 0.2s ease,color 0.2s ease,transform 0.15s ease;}
+    .btn-outline:hover{background:var(--brand-teal);color:#fff;transform:translateY(-1px);}
+    .btn-ghost-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.5);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 26px;border-radius:4px;text-decoration:none;cursor:pointer;transition:border-color 0.2s ease,background 0.2s ease,transform 0.15s ease;}
+    .btn-ghost-white:hover{border-color:#fff;background:rgba(255,255,255,0.1);transform:translateY(-1px);}
+    .logo-white{filter:brightness(0) invert(1) drop-shadow(0 0 6px rgba(127,207,178,0.5));}
+    .eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brand-teal);}
+    .feat-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 24px;transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;box-shadow:0 2px 8px rgba(13,92,107,0.06);}
+    .feat-card:hover{transform:translateY(-4px);border-color:var(--brand-teal);box-shadow:0 14px 32px rgba(13,92,107,0.13);}
+    .spec-row{display:flex;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);gap:16px;}
+    .spec-row:last-child{border-bottom:none;}
+    .spec-label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-gray);width:200px;flex-shrink:0;}
+    .spec-value{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);}
+    .js-loaded .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .js-loaded .reveal.visible{opacity:1;transform:translateY(0);}
+    .js-loaded .d1{transition-delay:0.08s;}.js-loaded .d2{transition-delay:0.16s;}.js-loaded .d3{transition-delay:0.24s;}.js-loaded .d4{transition-delay:0.32s;}.js-loaded .d5{transition-delay:0.40s;}.js-loaded .d6{transition-delay:0.48s;}
+    .hi{opacity:0;transform:translateY(16px);animation:hi 0.7s ease forwards;}
+    .h1{animation-delay:0.1s;}.h2{animation-delay:0.25s;}.h3{animation-delay:0.4s;}.h4{animation-delay:0.55s;}
+    @keyframes hi{to{opacity:1;transform:translateY(0);}}
+    .brand-rule{height:3px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green),transparent);border:none;}
+    .ft-link{font-size:14px;color:rgba(255,255,255,0.5);transition:color 0.2s ease;text-decoration:none;}
+    .ft-link:hover{color:var(--mint-green);}
+    .icon-circle{width:52px;height:52px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(26,122,138,0.12),rgba(91,184,154,0.08));}
+    .check-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;}
+    .nav-mobile-btn{display:none;background:transparent;border:none;cursor:pointer;padding:6px;color:#fff;line-height:0;flex-shrink:0;}
+    .nav-mobile-cta{display:none !important;}
+    @media(max-width:900px){header nav{padding-left:20px !important;padding-right:20px !important;}#nav-cta-desktop{display:none !important;}.nav-mobile-btn{display:flex !important;align-items:center;justify-content:center;}#nav-links{display:none !important;flex-direction:column !important;align-items:flex-start !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;bottom:0 !important;background:rgba(9,54,63,0.98) !important;backdrop-filter:blur(16px) !important;padding:28px 24px !important;gap:0 !important;border-top:1px solid rgba(255,255,255,0.1) !important;z-index:98 !important;overflow-y:auto !important;}#nav-links.open{display:flex !important;}#nav-links .nav-link{font-size:17px !important;padding:14px 0 !important;width:100%;border-bottom:1px solid rgba(255,255,255,0.07) !important;}.nav-mobile-cta{display:inline-flex !important;margin-top:20px !important;width:100% !important;justify-content:center !important;}section{padding-left:20px !important;padding-right:20px !important;}.hero-grid{grid-template-columns:1fr !important;padding:52px 20px 80px !important;gap:0 !important;}.hero-img-col{display:none !important;}.r2c{grid-template-columns:1fr !important;gap:40px !important;}.r3c{grid-template-columns:1fr !important;}.callout-grid{grid-template-columns:1fr !important;gap:24px !important;}.footer-grid{grid-template-columns:1fr 1fr !important;gap:28px !important;}.footer-bar{flex-direction:column !important;align-items:flex-start !important;gap:8px !important;}.spec-label{width:140px !important;}}
+    @media(max-width:520px){.footer-grid{grid-template-columns:1fr !important;}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,92,107,0.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08);">
+  <nav style="max-width:1300px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;">
+    <a href="index.html" aria-label="Focus Medical Corporation — Home">
+      <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;" />
+    </a>
+    <div id="nav-links" style="display:flex;align-items:center;gap:28px;">
+      <a href="index.html#cement" class="nav-link">Cement Portfolio</a>
+      <a href="index.html#products" class="nav-link">All Products</a>
+      <a href="index.html#gpo" class="nav-link">GPO Plans</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+      <a href="index.html#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+    </div>
+    <a href="index.html#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+    <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 30%,#0d5c6b 60%,#1a7a8a 100%);padding-top:68px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 40%,rgba(91,184,154,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 15% 70%,rgba(42,157,170,0.07) 0%,transparent 60%);pointer-events:none;"></div>
+
+  <div class="hero-grid" style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 460px;align-items:center;gap:60px;padding:80px 32px 96px;">
+
+    <!-- Left: copy -->
+    <div>
+      <div class="hi h1" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+        <a href="index.html" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s ease;">Home</a>
+        <span style="color:rgba(255,255,255,0.25);font-size:11px;">/</span>
+        <a href="index.html#products" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s ease;">Products</a>
+        <span style="color:rgba(255,255,255,0.25);font-size:11px;">/</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);">Blazer-C System</span>
+      </div>
+
+      <div class="hi h1" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:5px 14px;margin-bottom:22px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--mint-green);flex-shrink:0;"></div>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7);">IZI Medical Products &nbsp;&middot;&nbsp; Spine Solutions</span>
+      </div>
+
+      <h1 class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-0.03em;color:#fff;margin-bottom:8px;">Blazer-C<sup style="font-size:0.55em;font-weight:700;">&#174;</sup></h1>
+      <h1 class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,38px);line-height:1.1;letter-spacing:-0.025em;color:var(--mint-green);margin-bottom:20px;">Vertebral Augmentation System</h1>
+
+      <p class="hi h3" style="font-size:17px;line-height:1.7;color:rgba(255,255,255,0.72);max-width:520px;margin-bottom:32px;">Nitinol wire channel creation for predictable cement delivery — even in sclerotic bone, blastic lesions, and chronic fractures. Unilateral access. Complete vertebral body coverage.</p>
+
+      <div class="hi h4" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:36px;max-width:440px;">
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:16px 12px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--mint-green);line-height:1.1;">&lt;1hr</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;">per level</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:16px 12px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:#fff;line-height:1.1;">10G</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;">3mm OD wire</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:16px 12px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:#fff;line-height:1.2;">Uni-<br>lateral</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:4px;">single entry</div>
+        </div>
+      </div>
+
+      <div class="hi h4" style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Request Pricing
+        </a>
+        <a href="#specs" class="btn-ghost-white">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          View Specs
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: floating product card -->
+    <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
+      <div style="background:#fff;border-radius:16px;padding:32px;box-shadow:0 24px 64px rgba(0,0,0,0.4),0 8px 24px rgba(0,0,0,0.2);position:relative;max-width:360px;width:100%;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brand-teal),var(--brand-green));border-radius:16px 16px 0 0;"></div>
+        <img src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/1558284685206-5LZLMLRLL0MDROT55IN8/Blazer_C_Full_Product.png"
+             alt="Blazer-C Vertebral Augmentation System"
+             style="width:100%;height:260px;object-fit:contain;display:block;margin-bottom:20px;" />
+        <div style="border-top:1px solid var(--border);padding-top:16px;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:4px;">Blazer-C<sup style="font-size:0.7em;">&#174;</sup> Augmentation System</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-teal);">Vertebroplasty / Kyphoplasty</div>
+          <div style="margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;">
+            <span style="background:rgba(26,122,138,0.08);color:var(--brand-teal);border-radius:4px;padding:3px 8px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;">Nitinol Wire</span>
+            <span style="background:rgba(26,122,138,0.08);color:var(--brand-teal);border-radius:4px;padding:3px 8px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;">Unilateral</span>
+            <span style="background:rgba(91,184,154,0.1);color:var(--brand-green);border-radius:4px;padding:3px 8px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;">Sclerotic Bone</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section style="background:var(--charcoal);padding:18px 32px;border-bottom:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);">FDA Cleared</span>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);">&lt;1 Hour Procedure</span>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Office or Hospital</span>
+    </div>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);">Authorized Distributor — IZI Medical</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR CALLOUT -->
+<section style="padding:72px 32px;background:var(--light-gray);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="callout-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+
+      <div class="reveal d1">
+        <div class="eyebrow" style="margin-bottom:12px;">Key Differentiator</div>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,38px);line-height:1.1;letter-spacing:-0.025em;color:var(--charcoal);margin-bottom:16px;">"Predictable Cement Delivery —<br><span style="color:var(--brand-teal);">Even in Sclerotic Bone."</span></h2>
+        <hr class="brand-rule" style="margin-bottom:20px;max-width:340px;" />
+        <p style="font-size:16px;line-height:1.75;color:var(--text-gray);margin-bottom:20px;">Standard vertebral augmentation systems rely on hydraulic cement pressure to penetrate bone — a technique that fails in hard, sclerotic lesions and chronic fractures. The Blazer-C system takes a fundamentally different approach: a Nitinol wire mechanically creates channels through the vertebral body first, enabling controlled, predictable cement delivery regardless of bone density.</p>
+        <p style="font-size:16px;line-height:1.75;color:var(--text-gray);">A single unilateral 10G (3mm) entry point achieves complete vertebral body coverage — reducing patient exposure and procedure complexity without compromising fill.</p>
+      </div>
+
+      <div class="reveal d2" style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#fff;border-radius:10px;border:1px solid var(--border);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 2px 8px rgba(13,92,107,0.06);">
+          <div class="icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:4px;">Nitinol Wire Channel Creation</div>
+            <div style="font-size:13px;line-height:1.6;color:var(--text-gray);">Mechanically creates bone pathways before cement delivery — eliminating the guesswork of hydraulic pressure in dense or irregular bone morphology.</div>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:10px;border:1px solid var(--border);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 2px 8px rgba(13,92,107,0.06);">
+          <div class="icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:4px;">Works Where Others Fail</div>
+            <div style="font-size:13px;line-height:1.6;color:var(--text-gray);">Engineered specifically for blastic lesions, chronic fractures, and sclerotic bone — the cases that standard augmentation cannot reliably treat.</div>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:10px;border:1px solid var(--border);padding:20px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 2px 8px rgba(13,92,107,0.06);">
+          <div class="icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:4px;">Pairs with Vertefix® MV</div>
+            <div style="font-size:13px;line-height:1.6;color:var(--text-gray);">Complete IZI Medical kit — Blazer-C channel creation paired with Vertefix MV's 28cc yield for confident multilevel vertebroplasty procedures.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 6 FEATURES -->
+<section style="padding:80px 32px;background:#fff;">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:52px;" class="reveal d1">
+      <div class="eyebrow" style="margin-bottom:10px;">Product Features</div>
+      <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,4vw,36px);line-height:1.1;letter-spacing:-0.025em;color:var(--charcoal);">Engineered for the Hard Cases</h2>
+    </div>
+
+    <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <div class="feat-card reveal d1">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Nitinol Wire Channel Creation</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Mechanically creates pathways through bone for predictable cement flow — even in hard, sclerotic lesions where hydraulic augmentation systems fail to achieve adequate fill.</p>
+      </div>
+
+      <div class="feat-card reveal d2">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Unilateral Approach</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Single-entry 10G (3mm) access achieves complete vertebral body coverage without bilateral access. Fewer punctures, less patient exposure, faster recovery.</p>
+      </div>
+
+      <div class="feat-card reveal d3">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Directional Cement Control</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Cannulated wire design delivers cement with precise directional guidance through established channels — reducing extravasation risk and improving fill distribution.</p>
+      </div>
+
+      <div class="feat-card reveal d4">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Works in Sclerotic Bone</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Engineered for blastic lesions and chronic fractures where other augmentation systems struggle. The Nitinol wire overcomes bone density limitations mechanically.</p>
+      </div>
+
+      <div class="feat-card reveal d5">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Office or Hospital</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Under 1 hour per fracture level under local or general anesthesia. No OR required. Perform in your office, ASC, or hospital-based pain management suite.</p>
+      </div>
+
+      <div class="feat-card reveal d6">
+        <div class="icon-circle" style="margin-bottom:18px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4"/><path d="M12 14v-4"/><path d="M4 13c0-4.4 3.6-8 8-8s8 3.6 8 8v7H4v-7z"/></svg>
+        </div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--charcoal);margin-bottom:10px;">Pairs with Vertefix® MV</h3>
+        <p style="font-size:14px;line-height:1.7;color:var(--text-gray);">Complete procedure kit with IZI Medical's Vertefix MV cement — 28cc yield per kit enables confident multilevel procedures at the same cost competitors charge for one level.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLINICAL APPLICATIONS + SPECS -->
+<section id="specs" style="padding:80px 32px;background:var(--light-gray);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+
+      <div class="reveal d1">
+        <div class="eyebrow" style="margin-bottom:12px;">Clinical Applications</div>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);line-height:1.15;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:20px;">Indicated Fracture Types</h2>
+        <hr class="brand-rule" style="margin-bottom:28px;" />
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Osteoporotic Vertebral Compression Fractures</strong> — Primary indication for vertebroplasty pain relief and stabilization</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Malignant Vertebral Fractures</strong> — Pathological VCFs from primary bone tumors or metastatic disease</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Benign Lesions (Hemangioma)</strong> — Symptomatic vertebral hemangiomas requiring augmentation and stabilization</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Sclerotic Lesions</strong> — The Blazer-C advantage: Nitinol wire penetrates dense, hardened bone where hydraulic systems cannot</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Blastic Metastatic Disease</strong> — Dense bone-forming metastases that resist conventional vertebroplasty fill techniques</span>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--text-gray);"><strong style="color:var(--charcoal);">Chronic Fractures</strong> — Long-standing VCFs with remodeled, hardened architecture that reject standard cement delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <div class="eyebrow" style="margin-bottom:12px;">Technical Specifications</div>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,3vw,30px);line-height:1.15;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:20px;">System Specifications</h2>
+        <hr class="brand-rule" style="margin-bottom:28px;" />
+        <div style="background:#fff;border-radius:10px;border:1px solid var(--border);padding:8px 24px;box-shadow:0 2px 8px rgba(13,92,107,0.05);">
+          <div class="spec-row">
+            <span class="spec-label">Access</span>
+            <span class="spec-value">Unilateral</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Wire Material</span>
+            <span class="spec-value">Nitinol</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Outer Diameter</span>
+            <span class="spec-value">10G (3mm)</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Procedure Time</span>
+            <span class="spec-value">&lt; 1 hour per level</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Anesthesia</span>
+            <span class="spec-value">Local or General</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Setting</span>
+            <span class="spec-value">Office, ASC, or Hospital</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Cement Compatibility</span>
+            <span class="spec-value">Vertefix® MV / HV</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Indications</span>
+            <span class="spec-value" style="font-size:13px;">Pathological VCFs — Osteoporosis, Malignant, Benign</span>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:16px 20px;background:rgba(26,122,138,0.06);border-radius:8px;border-left:3px solid var(--brand-teal);">
+          <p style="font-size:13px;line-height:1.6;color:var(--text-gray);">Blazer-C is designed to pair with Vertefix® MV for a complete IZI Medical vertebroplasty kit. Available through Focus Medical with GPO pricing for qualified practices.</p>
+        </div>
+
+        <!-- Pair callout -->
+        <div style="margin-top:16px;background:linear-gradient(135deg,rgba(13,92,107,0.06),rgba(91,184,154,0.06));border:1px solid rgba(26,122,138,0.2);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:8px;background:var(--brand-teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4"/><path d="M12 14v-4"/><path d="M4 13c0-4.4 3.6-8 8-8s8 3.6 8 8v7H4v-7z"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--charcoal);margin-bottom:2px;">Complete kit with Vertefix® MV</div>
+            <a href="vertefix-mv.html" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;color:var(--brand-teal);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;">View Vertefix MV &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact" style="padding:88px 32px;background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 90% 50%,rgba(91,184,154,0.07) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+
+      <div class="reveal d1">
+        <div class="eyebrow" style="color:var(--mint-green);margin-bottom:14px;">Get Pricing</div>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.1;letter-spacing:-0.025em;color:#fff;margin-bottom:16px;">Request Blazer-C Pricing for Your Practice</h2>
+        <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.68);margin-bottom:28px;">Focus Medical GPO members get preferred pricing on the Blazer-C system and the full IZI Medical spine portfolio. Contact us to discuss your procedure volume and patient population.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:#fff;">IZI Medical Products</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.5);">(800) 231-1499 &nbsp;&middot;&nbsp; info@izimed.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d2">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:36px 32px;backdrop-filter:blur(8px);">
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:24px;">Request Pricing &amp; Information</h3>
+          <form action="mailto:info@izimed.com" method="get" enctype="text/plain" style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div>
+                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">First Name</label>
+                <input type="text" name="first_name" placeholder="Jane" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              </div>
+              <div>
+                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Last Name</label>
+                <input type="text" name="last_name" placeholder="Smith" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+              </div>
+            </div>
+            <div>
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Practice / Facility</label>
+              <input type="text" name="practice" placeholder="Interventional Pain Associates" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <div>
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Phone</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <div>
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jane@practice.com" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <div>
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Message (Optional)</label>
+              <textarea name="message" rows="3" placeholder="VCF volume per month, fracture types, current augmentation system..." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:14px;padding:15px 28px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Request
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--near-black);padding:48px 32px 28px;border-top:1px solid rgba(255,255,255,0.06);">
+  <div style="max-width:1300px;margin:0 auto;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;">
+      <div>
+        <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white" style="height:46px;width:auto;margin-bottom:16px;" />
+        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.38);max-width:270px;margin-bottom:12px;">Authorized distributor. GPO pricing available for physician offices, ASCs, and hospital-based pain management programs.</p>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brand-green);">Spine Care For Life</p>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;">Products</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li><a href="index.html#cement" class="ft-link">Cement Portfolio</a></li>
+          <li><a href="index.html#products" class="ft-link">All Products</a></li>
+          <li><a href="vertefix-mv.html" class="ft-link">Vertefix® MV</a></li>
+          <li><a href="izi-markers.html" class="ft-link">IZI Fiducial Markers</a></li>
+          <li><a href="blazer.html" class="ft-link">Blazer-C® System</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin-bottom:14px;">Focus Medical</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li><a href="index.html" class="ft-link">Home</a></li>
+          <li><a href="index.html#gpo" class="ft-link">GPO Plans</a></li>
+          <li><a href="index.html#contact" class="ft-link">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.24);">© 2025 Focus Medical Corporation. All rights reserved.</p>
+      <div style="display:flex;gap:18px;"><a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a><a href="#" class="ft-link" style="font-size:12px;">Regulatory Information</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js-loaded');
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  var nt=document.getElementById('nav-toggle');var nl=document.getElementById('nav-links');
+  if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open');nt.setAttribute('aria-expanded',nl.classList.contains('open'));});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');nt.setAttribute('aria-expanded','false');});});}
+</script>
+</body>
+</html>
