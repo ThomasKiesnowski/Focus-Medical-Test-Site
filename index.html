@@ -7,6 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
@@ -175,11 +183,11 @@
     .logo-white { filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127,207,178,0.5)); }
     .logo-white-hero {
       filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75));
-      animation: logo-breathe 3.5s ease-in-out infinite;
+      animation: logo-breathe 6s ease-in-out infinite;
     }
     @keyframes logo-breathe {
       0%, 100% { filter: brightness(0) invert(1) drop-shadow(0 0 28px rgba(127,207,178,0.75)) drop-shadow(0 0 8px rgba(255,255,255,0.2)); }
-      50%       { filter: brightness(0) invert(1) drop-shadow(0 0 56px rgba(127,207,178,1.0)) drop-shadow(0 0 24px rgba(255,255,255,0.5)); }
+      50%       { filter: brightness(0) invert(1) drop-shadow(0 0 48px rgba(127,207,178,0.9)) drop-shadow(0 0 18px rgba(255,255,255,0.4)); }
     }
 
     /* ── Hero pulse waves ── */
@@ -193,7 +201,7 @@
       transform: translate(-50%, -50%) scale(1);
       pointer-events: none;
       opacity: 0;
-      animation: pulse-wave 3.2s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+      animation: pulse-wave 5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
     }
     @keyframes pulse-wave {
       0%   { transform: translate(-50%, -50%) scale(1.0); opacity: 0.75; }
@@ -213,29 +221,34 @@
     .check-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; }
 
     /* ── Mobile nav ── */
-    .nav-mobile-btn { display: none; background: transparent; border: none; cursor: pointer; padding: 6px; color: #fff; line-height: 0; flex-shrink: 0; }
+    .nav-mobile-btn { display: none; background: transparent; border: none; cursor: pointer; padding: 6px; color: #fff; line-height: 0; flex-shrink: 0; z-index: 101; position: relative; }
     .nav-mobile-cta { display: none !important; }
+    .nav-mobile-btn .icon-open, .nav-mobile-btn .icon-close { transition: opacity 0.2s ease, transform 0.2s ease; }
+    .nav-mobile-btn .icon-close { display: none; }
+    .nav-mobile-btn.active .icon-open { display: none; }
+    .nav-mobile-btn.active .icon-close { display: block; }
 
     @media (max-width: 900px) {
       header nav { padding-left: 20px !important; padding-right: 20px !important; }
       #nav-cta-desktop { display: none !important; }
       .nav-mobile-btn { display: flex !important; align-items: center; justify-content: center; }
-      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 68px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 28px 24px !important; gap: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; z-index: 98 !important; overflow-y: auto !important; }
+      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 88px 24px 28px !important; gap: 0 !important; border-top: none !important; z-index: 99 !important; overflow-y: auto !important; }
       #nav-links.open { display: flex !important; }
-      #nav-links .nav-link { font-size: 17px !important; padding: 14px 0 !important; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
-      .nav-mobile-cta { display: inline-flex !important; margin-top: 20px !important; width: 100% !important; justify-content: center !important; }
+      #nav-links .nav-link { font-size: 18px !important; padding: 16px 0 !important; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.07) !important; display: block !important; }
+      .nav-mobile-cta { display: inline-flex !important; margin-top: 24px !important; width: 100% !important; justify-content: center !important; }
       section { padding-left: 20px !important; padding-right: 20px !important; }
       .hero-grid { grid-template-columns: 1fr !important; padding: 52px 20px 80px !important; gap: 0 !important; }
       .hero-img-col { display: none !important; }
       .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
       .r2c { grid-template-columns: 1fr !important; gap: 32px !important; }
-      .r3c { grid-template-columns: 1fr !important; }
+      .r3c { grid-template-columns: 1fr 1fr !important; }
       .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
       .footer-bar { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
     }
     @media (max-width: 520px) {
       .footer-grid { grid-template-columns: 1fr !important; }
       .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
+      .r3c { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -259,8 +272,11 @@
       </div>
       <a href="#gpo" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Join the GPO</a>
       <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
         </svg>
       </button>
     </nav>
@@ -306,9 +322,9 @@
       <div class="hero-img-col hi h3" style="display:flex;justify-content:center;align-items:center;position:relative;">
         <!-- Radiating pulse waves -->
         <div class="wave-ring" style="animation-delay:0s;"></div>
-        <div class="wave-ring" style="animation-delay:0.8s;"></div>
-        <div class="wave-ring" style="animation-delay:1.6s;"></div>
-        <div class="wave-ring" style="animation-delay:2.4s;"></div>
+        <div class="wave-ring" style="animation-delay:1.25s;"></div>
+        <div class="wave-ring" style="animation-delay:2.5s;"></div>
+        <div class="wave-ring" style="animation-delay:3.75s;"></div>
         <!-- Inner static glow -->
         <div style="position:absolute;width:370px;height:370px;border-radius:50%;background:radial-gradient(circle,rgba(127,207,178,0.13) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
         <img src="brand_assets/Logo.png" alt="Focus Medical Corporation" class="logo-white-hero" style="width:310px;max-width:100%;position:relative;z-index:2;" />
@@ -330,7 +346,7 @@
   <section style="background:#fff;padding:56px 32px 72px;">
     <div style="max-width:1300px;margin:0 auto;">
       <div class="reveal stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin-bottom:52px;">
-        <div><div class="stat-num">6+</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Manufacturer Partners</p></div>
+        <div><div class="stat-num">12</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Manufacturer Partners</p></div>
         <div><div class="stat-num">FDA</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Cleared Portfolio</p></div>
         <div><div class="stat-num">3</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">Specialty Verticals</p></div>
         <div><div class="stat-num">ISO</div><p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-gray);margin-top:8px;">13485 Certified Partners</p></div>
@@ -434,11 +450,11 @@
           </div>
           <div style="padding:32px;">
             <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:6px;">V-STEADY™ / V-FAST™</h3>
-            <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:20px;">High &amp; Low Viscosity Vertebroplasty Cement</p>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:20px;">Barium Opacified Vertebroplasty Cement — Lower Your Risk of Extravasation</p>
 
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
               <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
-                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">9min+</div>
+                <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--deep-teal);letter-spacing:-0.03em;">14min</div>
                 <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);margin-top:3px;">Injection</div>
               </div>
               <div style="background:var(--light-gray);border-radius:6px;padding:14px 10px;text-align:center;">
@@ -473,6 +489,26 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       EARLY CTA — Get in touch
+  ════════════════════════════════════════════ -->
+  <section style="background:#fff;padding:0 32px 0;">
+    <div class="reveal" style="max-width:1300px;margin:0 auto;background:linear-gradient(135deg,var(--deep-teal),var(--brand-teal));border-radius:12px;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+      <div style="max-width:600px;">
+        <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);margin-bottom:10px;">Ready to Save on Every Case?</p>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(20px,2.5vw,28px);color:#fff;letter-spacing:-0.02em;line-height:1.25;">Talk to our team about GPO pricing, product demos, or adding new procedures to your practice.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#contact" class="btn-white">
+          Contact Us
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#gpo" class="btn-ghost-white">View GPO Plans</a>
       </div>
     </div>
   </section>
@@ -544,7 +580,6 @@
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Bioabsorbable</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Radiopaque</span>
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">ISO 13485</span>
             </div>
             <a href="g21-flex-beads.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
@@ -569,22 +604,22 @@
           </div>
         </article>
 
-        <!-- Elliquence Disc-FX -->
+        <!-- Spinal Simplicity Minuteman -->
         <article class="prod-card reveal d2">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://www.elliquence.com/wp-content/uploads/2018/08/Disc-FX-Banner-2018.jpg" alt="Elliquence Disc-FX minimally invasive discectomy system" style="height:200px;object-fit:cover;" />
+            <img src="https://spinalsimplicity.com/wp-content/uploads/2022/02/Minuteman-G5-Profile.jpg" alt="Spinal Simplicity Minuteman lateral lumbar interbody fusion" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" onerror="this.src='https://placehold.co/520x220/E8F4F6/1A7A8A?text=Minuteman+G3+%E2%80%94+Spinal+Simplicity'" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
-            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Elliquence — Disc &amp; Spine</span>
-            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Disc-FX® System</h3>
-            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Minimally invasive discectomy for lumbar disc herniation. 3.0mm working portal — less tissue disruption, faster recovery. Disc-FX Mini available for cervical applications. Office or ASC setting.</p>
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Spinal Simplicity — Lumbar Fusion</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Minuteman® G3 Lateral Interbody Fusion</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Minimally invasive lateral access interbody fusion. Tissue-sparing approach through a small tubular retractor — reduced blood loss, faster recovery, and same-day discharge capability.</p>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">3.0mm Portal</span>
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Lumbar &amp; Cervical</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Lateral Access</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">MIS</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Same-Day Discharge</span>
             </div>
-            <a href="disc-fx.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
+            <a href="minuteman.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -592,7 +627,7 @@
         <article class="prod-card reveal d3">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://placehold.co/520x220/E8F4F6/1A7A8A?text=IZI+Bone+Core+Markers+%E2%80%94+Oncology" alt="IZI Medical Bone Core Markers for oncology" style="height:200px;object-fit:cover;" />
+            <img src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/eea3f79f-1d56-45e2-82a0-fb4f38dac5cb/8.jpg" alt="IZI Medical Bonopty Bone Core Biopsy System" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" onerror="this.src='https://placehold.co/520x220/E8F4F6/1A7A8A?text=Bonopty+Bone+Core+Biopsy'" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">IZI Medical — Oncology &amp; IR</span>
@@ -610,14 +645,13 @@
         <article class="prod-card reveal d1">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://images.squarespace-cdn.com/content/v1/5db9b247d0c0d546f3b8f3b3/4e889964-06ff-4d66-b6df-09e96454540b/Inspan+contoured+VEGA.jpg" alt="Inspan ScrewLES interspinous fixation system" style="height:200px;object-fit:cover;" />
+            <img src="brand_assets/inspan-device.png" alt="Inspan ScrewLES interspinous fixation system" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Inspan — Spinal Stabilization</span>
             <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">ScrewLES® Interspinous Fixation</h3>
             <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">No pedicle screws. No fusion. FDA cleared interspinous fixation via a &lt;2" incision — same-day discharge. Designed for lumbar spinal stenosis with rapid patient return to activity.</p>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">FDA Cleared</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Same-Day Discharge</span>
               <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">&lt;2" Incision</span>
             </div>
@@ -644,22 +678,21 @@
           </div>
         </article>
 
-        <!-- Synergy Disc — Synergy Spine Solutions -->
+        <!-- G21 Flex Drill -->
         <article class="prod-card reveal d3">
           <div class="prod-card-top-bar"></div>
           <div class="img-wrap" style="overflow:hidden;">
-            <img src="https://synergyspinesolutions.com/wp-content/uploads/2021/08/synerdisc-0810a.jpg" alt="Synergy Disc cervical artificial disc replacement" style="height:200px;object-fit:cover;" />
+            <img src="brand_assets/flex-drill.jpg" alt="G21 Flex Drill kyphoplasty access tool" style="height:200px;object-fit:contain;background:#f4f6f7;width:100%;" />
           </div>
           <div style="padding:24px;flex:1;display:flex;flex-direction:column;">
-            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">Synergy Spine Solutions — Motion Preservation</span>
-            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Synergy Disc® Cervical ADR</h3>
-            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">FDA PMA approved cervical artificial disc replacement. Preserves motion at the treated level — avoiding the adjacent level degeneration associated with fusion. Advanced biomechanical design for long-term durability.</p>
+            <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:6px;display:block;">G21 — Kyphoplasty Access</span>
+            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:10px;line-height:1.25;">Flex Drill™ Kyphoplasty Access Tool</h3>
+            <p style="font-size:14px;line-height:1.7;color:var(--text-gray);margin-bottom:16px;flex:1;">Flexible drill designed for precision access in kyphoplasty procedures. Creates a controlled cavity in the vertebral body for optimal cement fill. Pairs seamlessly with G21 V-STEADY and V-FAST cement systems.</p>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;">
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">FDA PMA</span>
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Motion Preservation</span>
-              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Cervical</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Kyphoplasty</span>
+              <span style="background:#EBF5F6;color:var(--brand-teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:4px 8px;border-radius:3px;">Flexible Design</span>
             </div>
-            <a href="synergy-disc.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
+            <a href="flex-drill.html" class="btn-outline" style="font-size:11px;padding:9px 18px;align-self:flex-start;">Learn More</a>
           </div>
         </article>
 
@@ -779,8 +812,8 @@
       <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
 
         <!-- Tier 1 -->
-        <div class="price-card reveal d1">
-          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);display:block;margin-bottom:8px;">Tier 1</span>
+        <div class="price-card reveal d1" style="background:linear-gradient(155deg,#e8f6f8,#f0faf8);border-color:#b8dde3;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid-teal);display:block;margin-bottom:8px;">Tier 1</span>
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--charcoal);margin-bottom:6px;">Basic Access</h3>
           <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.04em;color:var(--charcoal);line-height:1;">$199</span>
@@ -798,8 +831,8 @@
         </div>
 
         <!-- Tier 2 -->
-        <div class="price-card reveal d2" style="background:var(--light-gray);border-color:#D4DDE0;">
-          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:8px;">Tier 2</span>
+        <div class="price-card reveal d2" style="background:linear-gradient(155deg,#d4eff3,#e2f5f0);border-color:#8ec8d0;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--brand-teal);display:block;margin-bottom:8px;">Tier 2</span>
           <h3 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;color:var(--charcoal);margin-bottom:6px;">Standard</h3>
           <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px;">
             <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.04em;color:var(--charcoal);line-height:1;">$299</span>
@@ -863,16 +896,78 @@
         </div>
         <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Elliquence</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Spinal Simplicity</span>
         </div>
         <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--brand-green);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">NanoFUSE Biologics</span>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:14px 24px;background:#fff;border:1.5px solid var(--border);border-radius:8px;box-shadow:0 2px 8px rgba(13,92,107,0.07);transition:transform 0.2s ease,box-shadow 0.2s ease;cursor:default;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(13,92,107,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(13,92,107,0.07)'">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--mid-teal);"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);">Synergy Spine Solutions</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       PATIENT LIFETIME VALUE — Practice Growth
+  ════════════════════════════════════════════ -->
+  <section id="ltv" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 30%,#0d5c6b 60%,#1a7a8a 100%);padding:96px 32px;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;opacity:0.04;pointer-events:none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="ltv-noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#ltv-noise)"/></svg>
+    </div>
+    <div style="position:absolute;top:-10%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <div style="max-width:1300px;margin:0 auto;position:relative;z-index:1;">
+      <div class="reveal" style="text-align:center;margin-bottom:56px;">
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);display:block;margin-bottom:12px;">What Should Be Your Focus?</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);letter-spacing:-0.03em;color:#fff;margin-bottom:16px;">Patient Lifetime Value — The Real ROI</h2>
+        <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.72);max-width:600px;margin:0 auto;">
+          Every new patient represents $300,000+ in lifetime revenue. Focus Medical helps you grow patient volume, expand your service lines, and maximize the long-term value of every patient relationship.
+        </p>
+      </div>
+
+      <!-- Stats row -->
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.04em;color:var(--mint-green);line-height:1;">3/10</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:8px;">Surgical Patients</div>
         </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.04em;color:var(--mint-green);line-height:1;">$55K+</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:8px;">Surgical LTV</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.04em;color:var(--mint-green);line-height:1;">$20K+</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:8px;">Conservative LTV</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 20px;text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:36px;letter-spacing:-0.04em;color:var(--mint-green);line-height:1;">10yr</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:8px;">Avg Patient Span</div>
+        </div>
+      </div>
+
+      <!-- Value comparison -->
+      <div class="reveal r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:36px;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;">Conservative Patient</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:rgba(255,255,255,0.4);letter-spacing:-0.02em;margin-bottom:12px;">$20K+</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;">Even a conservative-track patient generates $18–26K over their care journey through office visits, imaging, injections, and therapy management.</p>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(91,184,154,0.12),rgba(26,122,138,0.08));border:1px solid rgba(91,184,154,0.25);border-radius:12px;padding:36px;">
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);margin-bottom:16px;">Surgical Patient</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:var(--mint-green);letter-spacing:-0.02em;margin-bottom:12px;">$55K+</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.72);line-height:1.7;">3 in 10 patients progress to surgery — each generating $55–75K in lifetime value. 15 new patients per year means $300,000+ in practice revenue.</p>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="reveal" style="text-align:center;">
+        <p style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;color:rgba(255,255,255,0.85);max-width:580px;margin:0 auto 28px;line-height:1.7;">
+          Your next 15 patients could generate over $300,000 in lifetime revenue. Focus Medical helps you build the practice infrastructure to capture that value.
+        </p>
+        <a href="#contact" class="btn-white">
+          Let's Build Your Growth Plan
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -915,6 +1010,8 @@
             <p style="font-size:14px;color:rgba(255,255,255,0.7);">We'll be in touch shortly.</p>
           </div>
           <form id="contact-form" style="display:flex;flex-direction:column;gap:14px;">
+            <input type="hidden" name="_subject" value="Focus Medical Inquiry — Homepage" />
+            <input type="hidden" name="page_source" value="index.html" />
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
               <div>
                 <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">First Name</label>
@@ -939,6 +1036,10 @@
             <div>
               <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Email</label>
               <input type="email" name="email" placeholder="jane@yourpractice.com" required style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+            </div>
+            <div>
+              <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 123-4567" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
             </div>
             <div>
               <label style="display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:5px;">How Can We Help?</label>
@@ -973,7 +1074,7 @@
             <li><a href="#cement" class="ft-link">Vertebroplasty Cement</a></li>
             <li><a href="#products" class="ft-link">Fiducial Markers</a></li>
             <li><a href="#products" class="ft-link">SI Joint Fusion</a></li>
-            <li><a href="#products" class="ft-link">DiscFX System</a></li>
+            <li><a href="#products" class="ft-link">Minuteman Fusion</a></li>
             <li><a href="#products" class="ft-link">Flex Beads</a></li>
           </ul>
         </div>
@@ -1020,10 +1121,18 @@
     if (nt && nl) {
       nt.addEventListener('click', function() {
         nl.classList.toggle('open');
-        nt.setAttribute('aria-expanded', nl.classList.contains('open'));
+        nt.classList.toggle('active');
+        var isOpen = nl.classList.contains('open');
+        nt.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
       });
       nl.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function() { nl.classList.remove('open'); nt.setAttribute('aria-expanded','false'); });
+        a.addEventListener('click', function() {
+          nl.classList.remove('open');
+          nt.classList.remove('active');
+          nt.setAttribute('aria-expanded','false');
+          document.body.style.overflow = '';
+        });
       });
     }
 
@@ -1043,8 +1152,10 @@
           last_name: contactForm.querySelector('[name=last_name]').value,
           specialty: contactForm.querySelector('[name=specialty]').value,
           email: contactForm.querySelector('[name=email]').value,
+          phone: contactForm.querySelector('[name=phone]').value,
           message: contactForm.querySelector('[name=message]').value,
-          _subject: 'New Inquiry — Focus Medical Website'
+          _subject: 'Focus Medical Inquiry — Homepage',
+          page_source: 'index.html'
         };
 
         fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com', {

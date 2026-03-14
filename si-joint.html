@@ -8,6 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{--deep-teal:#0D5C6B;--brand-teal:#1A7A8A;--mid-teal:#2A9DAA;--brand-green:#5BB89A;--mint-green:#7FCFB2;--near-black:#0A0A0A;--charcoal:#1C2B2D;--text-gray:#4A5568;--light-gray:#F4F6F7;--border:#DDE5E8;}
@@ -139,8 +146,10 @@
     <!-- Right product card -->
     <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:16px;backdrop-filter:blur(8px);padding:28px;max-width:420px;width:100%;">
-        <div style="background:#fff;border-radius:10px;overflow:hidden;margin-bottom:18px;">
-          <img src="https://www.genesysspine.com/wp-content/uploads/2021/01/900x900-Lateral-Sacroiliac-Joint-Fusion-%E2%80%93-SIros-3D-Printed.png" alt="SIros Lateral SI Joint Fusion System" style="width:100%;height:auto;display:block;" />
+        <div style="width:100%;height:300px;background:linear-gradient(145deg,#f5f6f7 0%,#eceef0 40%,#e2e5e8 100%);border-radius:10px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(13,92,107,0.06),transparent 70%);"></div>
+          <div style="position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.06),transparent 70%);"></div>
+          <img src="https://www.genesysspine.com/wp-content/uploads/2021/01/900x900-Lateral-Sacroiliac-Joint-Fusion-%E2%80%93-SIros-3D-Printed.png" alt="SIros Lateral SI Joint Fusion System" style="max-width:85%;max-height:260px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12)) drop-shadow(0 2px 6px rgba(0,0,0,0.06));position:relative;z-index:1;" />
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
           <div style="background:#fff;border-radius:8px;overflow:hidden;">
@@ -378,41 +387,51 @@
         </div>
       </div>
       <div class="reveal d2">
-        <div style="background:rgba(255,255,255,0.97);border-radius:16px;padding:36px 32px;box-shadow:0 24px 64px rgba(0,0,0,0.28);">
-          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:var(--charcoal);margin-bottom:6px;">Request Pricing</h3>
-          <p style="font-size:14px;color:var(--text-gray);margin-bottom:24px;">Our team follows up within one business day.</p>
-          <form style="display:flex;flex-direction:column;gap:16px;" onsubmit="return false;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:36px 32px;backdrop-filter:blur(8px);">
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:24px;">Request Pricing &amp; Information</h3>
+          <form id="product-form" style="display:flex;flex-direction:column;gap:16px;">
+            <input type="hidden" name="_subject" value="Focus Medical Inquiry — SI Joint" />
+            <input type="hidden" name="page_source" value="si-joint.html" />
+            <input type="hidden" name="_template" value="table" />
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
               <div>
-                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">First Name</label>
-                <input type="text" placeholder="Jane" class="form-input" />
+                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">First Name *</label>
+                <input type="text" name="firstName" placeholder="Jane" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
               </div>
               <div>
-                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">Last Name</label>
-                <input type="text" placeholder="Smith" class="form-input" />
+                <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Last Name</label>
+                <input type="text" name="lastName" placeholder="Smith" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
               </div>
             </div>
             <div>
-              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">Email</label>
-              <input type="email" placeholder="jane@clinic.com" class="form-input" />
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Email *</label>
+              <input type="email" name="email" placeholder="jane@clinic.com" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
             </div>
             <div>
-              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">Practice / Facility</label>
-              <input type="text" placeholder="Pain Management Associates" class="form-input" />
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Phone Number</label>
+              <input type="tel" name="phone" placeholder="(555) 000-0000" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
             </div>
             <div>
-              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">Phone (optional)</label>
-              <input type="tel" placeholder="(555) 000-0000" class="form-input" />
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Practice / Facility</label>
+              <input type="text" name="practice" placeholder="Pain Management Associates" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
             </div>
             <div>
-              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-gray);display:block;margin-bottom:6px;">Message</label>
-              <textarea placeholder="I'm interested in SIros pricing and training options..." class="form-input"></textarea>
+              <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">I'm Interested In</label>
+              <textarea name="message" rows="3" placeholder="I'm interested in SIros pricing and training options..." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
             </div>
-            <button type="submit" class="btn-primary-full">Send Request
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="submit" id="form-submit-btn" class="btn-primary" style="width:100%;justify-content:center;font-size:14px;padding:15px 28px;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Request
             </button>
-            <p style="font-size:11px;color:var(--text-gray);text-align:center;">Your information is never shared with third parties.</p>
           </form>
+          <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h4 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:8px;">Thank You!</h4>
+            <p style="font-size:14px;color:rgba(255,255,255,0.7);">Your request has been received. Our team will follow up within one business day.</p>
+          </div>
+          <div id="form-error" style="display:none;margin-top:12px;padding:12px 16px;background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);border-radius:8px;">
+            <p style="font-size:13px;color:#fca5a5;margin:0;">Something went wrong. Please try again or email us directly.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -461,5 +480,31 @@
   if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open');nt.setAttribute('aria-expanded',nl.classList.contains('open'));});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');nt.setAttribute('aria-expanded','false');});});}
 </script>
 
+<script>
+(function(){
+  var form=document.getElementById('product-form');if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=document.getElementById('form-submit-btn');
+    var successDiv=document.getElementById('form-success');
+    var errorDiv=document.getElementById('form-error');
+    btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='0.7';
+    errorDiv.style.display='none';
+    var data={};var fd=new FormData(form);fd.forEach(function(v,k){data[k]=v;});
+    fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(r){return r.json();}).then(function(result){
+      if(result.success){form.style.display='none';successDiv.style.display='block';}
+      else{throw new Error('fail');}
+    }).catch(function(){
+      errorDiv.style.display='block';
+      btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Request';
+      btn.disabled=false;btn.style.opacity='1';
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -7,6 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{--deep-teal:#0D5C6B;--brand-teal:#1A7A8A;--mid-teal:#2A9DAA;--brand-green:#5BB89A;--mint-green:#7FCFB2;--near-black:#0A0A0A;--charcoal:#1C2B2D;--text-gray:#4A5568;--light-gray:#F4F6F7;--border:#DDE5E8;}
@@ -124,9 +131,13 @@
     <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
       <div class="hi h3" style="background:#fff;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.12);padding:28px;max-width:380px;width:100%;position:relative;">
         <div style="position:absolute;top:-14px;right:20px;background:var(--deep-teal);border-radius:6px;padding:5px 14px;">
-          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">FDA Cleared — T1 to S1</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">T1 to S1 Coverage</span>
         </div>
-        <img src="https://images.squarespace-cdn.com/content/v1/5db9b247d0c0d546f3b8f3b3/4e889964-06ff-4d66-b6df-09e96454540b/Inspan+contoured+VEGA.jpg" alt="Inspan ScrewLES Interspinous Fixation" style="width:100%;height:280px;object-fit:cover;border-radius:10px;margin-bottom:18px;" />
+        <div style="width:100%;height:300px;background:linear-gradient(145deg,#f5f6f7 0%,#eceef0 40%,#e2e5e8 100%);border-radius:10px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(13,92,107,0.06),transparent 70%);"></div>
+          <div style="position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.06),transparent 70%);"></div>
+          <img src="brand_assets/inspan-device.png" alt="Inspan ScrewLES Interspinous Fixation" style="max-width:85%;max-height:260px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12)) drop-shadow(0 2px 6px rgba(0,0,0,0.06));position:relative;z-index:1;" />
+        </div>
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <div>
             <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);line-height:1.2;">ScrewLES®</p>
@@ -154,11 +165,7 @@
     <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);">FDA Cleared (2010)</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);">T1–S1 Cleared</span>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">T1–S1 Coverage</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -383,26 +390,40 @@
 </section>
 
 <!-- CTA / CONTACT -->
-<section id="contact" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);padding:88px 32px;position:relative;overflow:hidden;">
+<section id="contact" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);padding:80px 32px;position:relative;overflow:hidden;">
   <div style="position:absolute;top:-15%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.1) 0%,transparent 70%);pointer-events:none;"></div>
-  <div style="max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1;" class="reveal d1">
-    <hr class="brand-rule" style="width:40px;margin:0 auto 22px;" />
-    <p class="eyebrow" style="color:var(--mint-green);margin-bottom:14px;">Get Pricing Through Focus Medical</p>
-    <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin-bottom:18px;">
-      Ready to Add ScrewLES®<br />to Your Program?
-    </h2>
-    <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.7);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;">
-      Focus Medical Corporation is the authorized distributor for Inspan ScrewLES. Contact us to discuss pricing, GPO tiers, and clinical support for your spine program.
-    </p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="index.html#contact" class="btn-white">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Request Pricing
-      </a>
-      <a href="index.html#gpo" class="btn-ghost-white">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        View GPO Plans
-      </a>
+  <div style="max-width:1300px;margin:0 auto;position:relative;z-index:1;">
+    <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div class="reveal d1">
+        <p class="eyebrow" style="color:var(--mint-green);margin-bottom:12px;">Get Pricing Through Focus Medical</p>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,40px);line-height:1.1;letter-spacing:-0.03em;color:#fff;margin-bottom:20px;">Ready to Add ScrewLES&reg;<br/>to Your Program?</h2>
+        <hr class="brand-rule" style="width:56px;margin-bottom:24px;" />
+        <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.62);margin-bottom:32px;">Focus Medical Corporation is the authorized distributor for Inspan ScrewLES. Contact us to discuss pricing, GPO tiers, and clinical support for your spine program.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPO pricing — hospital-level rates for physician offices</span></div>
+          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clinical support and training available</span></div>
+          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We respond within one business day</span></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:36px 32px;backdrop-filter:blur(8px);">
+          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:24px;">Request Pricing &amp; Information</h3>
+          <form id="product-form" style="display:flex;flex-direction:column;gap:16px;">
+            <input type="hidden" name="_subject" value="Focus Medical Inquiry — Inspan ScrewLES" />
+            <input type="hidden" name="page_source" value="inspan-screwles.html" />
+            <input type="hidden" name="_template" value="table" />
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">First Name *</label><input type="text" name="firstName" placeholder="Jane" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div><div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Last Name</label><input type="text" name="lastName" placeholder="Smith" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div></div>
+            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Email *</label><input type="email" name="email" placeholder="jane@practice.com" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
+            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Phone Number</label><input type="tel" name="phone" placeholder="(555) 000-0000" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
+            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Practice / Facility</label><input type="text" name="practice" placeholder="Pain Management Associates" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
+            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">I'm Interested In</label><textarea name="message" rows="3" placeholder="GPO pricing, product samples, clinical data..." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea></div>
+            <button type="submit" id="form-submit-btn" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--brand-teal);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:15px 28px;border-radius:4px;border:none;cursor:pointer;transition:background 0.2s ease,transform 0.15s ease;box-shadow:0 4px 16px rgba(26,122,138,0.35);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Request</button>
+            <p style="font-size:11px;color:rgba(255,255,255,0.4);text-align:center;">Your information is never shared with third parties.</p>
+          </form>
+          <div id="form-success" style="display:none;text-align:center;padding:40px 20px;"><div style="width:56px;height:56px;border-radius:50%;background:rgba(91,184,154,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:8px;">Request Sent!</h3><p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;">Thank you. Our team will follow up within one business day.</p></div>
+          <div id="form-error" style="display:none;text-align:center;padding:16px;margin-top:12px;background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);border-radius:6px;"><p style="font-size:13px;color:#fca5a5;font-family:'Montserrat',sans-serif;font-weight:600;">Something went wrong. Please try again or email us directly.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -449,5 +470,8 @@
   if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open');nt.setAttribute('aria-expanded',nl.classList.contains('open'));});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');nt.setAttribute('aria-expanded','false');});});}
 </script>
 
+<script>
+(function(){var form=document.getElementById('product-form');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();var btn=document.getElementById('form-submit-btn');var successDiv=document.getElementById('form-success');var errorDiv=document.getElementById('form-error');btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='0.7';errorDiv.style.display='none';var data={};var fd=new FormData(form);fd.forEach(function(v,k){data[k]=v;});fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json();}).then(function(result){if(result.success){form.style.display='none';successDiv.style.display='block';}else{throw new Error('fail');}}).catch(function(){errorDiv.style.display='block';btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Request';btn.disabled=false;btn.style.opacity='1';});});})();
+</script>
 </body>
 </html>

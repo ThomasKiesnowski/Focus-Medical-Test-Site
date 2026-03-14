@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V-STEADY™ / V-FAST™ Vertebroplasty Cement | Focus Medical Corporation</title>
+  <title>Flex Drill™ Kyphoplasty Access Tool | Focus Medical Corporation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,7 +16,6 @@
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{--deep-teal:#0D5C6B;--brand-teal:#1A7A8A;--mid-teal:#2A9DAA;--brand-green:#5BB89A;--mint-green:#7FCFB2;--near-black:#0A0A0A;--charcoal:#1C2B2D;--text-gray:#4A5568;--light-gray:#F4F6F7;--border:#DDE5E8;}
     *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Open Sans',sans-serif;background:#fff;color:var(--charcoal);overflow-x:hidden;}
@@ -48,7 +49,6 @@
     .check-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;}
     .nav-mobile-btn{display:none;background:transparent;border:none;cursor:pointer;padding:6px;color:#fff;line-height:0;flex-shrink:0;}
     .nav-mobile-cta{display:none !important;}
-    .viscosity-pill{display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;}
     @media(max-width:900px){header nav{padding-left:20px !important;padding-right:20px !important;}#nav-cta-desktop{display:none !important;}.nav-mobile-btn{display:flex !important;align-items:center;justify-content:center;}#nav-links{display:none !important;flex-direction:column !important;align-items:flex-start !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;bottom:0 !important;background:rgba(9,54,63,0.98) !important;backdrop-filter:blur(16px) !important;padding:28px 24px !important;gap:0 !important;border-top:1px solid rgba(255,255,255,0.1) !important;z-index:98 !important;overflow-y:auto !important;}#nav-links.open{display:flex !important;}#nav-links .nav-link{font-size:17px !important;padding:14px 0 !important;width:100%;border-bottom:1px solid rgba(255,255,255,0.07) !important;}.nav-mobile-cta{display:inline-flex !important;margin-top:20px !important;width:100% !important;justify-content:center !important;}section{padding-left:20px !important;padding-right:20px !important;}.hero-grid{grid-template-columns:1fr !important;padding:52px 20px 80px !important;gap:0 !important;}.hero-img-col{display:none !important;}.r2c{grid-template-columns:1fr !important;gap:40px !important;}.r3c{grid-template-columns:1fr !important;}.callout-grid{grid-template-columns:1fr !important;gap:24px !important;}.footer-grid{grid-template-columns:1fr 1fr !important;gap:28px !important;}.footer-bar{flex-direction:column !important;align-items:flex-start !important;gap:8px !important;}.spec-label{width:140px !important;}}
     @media(max-width:520px){.footer-grid{grid-template-columns:1fr !important;}}
   </style>
@@ -64,9 +64,9 @@
       <a href="index.html#products" class="nav-link">All Products</a>
       <a href="index.html#gpo" class="nav-link">GPO Plans</a>
       <a href="index.html#contact" class="nav-link">Contact</a>
-      <a href="index.html#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+      <a href="#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
     </div>
-    <a href="index.html#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
+    <a href="#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
     <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -90,54 +90,58 @@
       <div class="hi h1" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
         <a href="index.html" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;">Focus Medical</a>
         <span style="color:rgba(255,255,255,0.25);font-size:11px;">/</span>
-        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);">Vertebroplasty Cement</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mint-green);">Kyphoplasty</span>
       </div>
 
       <div class="hi h1" style="display:inline-block;background:rgba(91,184,154,0.15);border:1px solid rgba(91,184,154,0.3);border-radius:4px;padding:5px 12px;margin-bottom:20px;">
-        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);">G21 — Vertebral Consolidation</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mint-green);">G21 — Kyphoplasty Access</span>
       </div>
 
       <h1 class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(34px,4.5vw,58px);line-height:1.07;letter-spacing:-0.03em;color:#fff;margin-bottom:12px;">
-        V-STEADY™ &amp; V-FAST™
+        Flex Drill™
       </h1>
       <p class="hi h2" style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(15px,2vw,19px);color:var(--mint-green);letter-spacing:0.01em;margin-bottom:24px;">
-        Vertebroplasty Bone Cement System
+        Kyphoplasty Access Tool
       </p>
 
-      <!-- Viscosity pills -->
+      <!-- Tags -->
       <div class="hi h2" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
-        <span class="viscosity-pill" style="background:rgba(26,122,138,0.25);border:1px solid rgba(26,122,138,0.5);color:#fff;">
+        <span style="display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(26,122,138,0.25);border:1px solid rgba(26,122,138,0.5);color:#fff;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          V-STEADY™ — High Viscosity
+          Kyphoplasty
         </span>
-        <span class="viscosity-pill" style="background:rgba(91,184,154,0.2);border:1px solid rgba(91,184,154,0.4);color:#fff;">
+        <span style="display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(91,184,154,0.2);border:1px solid rgba(91,184,154,0.4);color:#fff;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          V-FAST™ — Low Viscosity
+          Flexible Design
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(42,157,170,0.2);border:1px solid rgba(42,157,170,0.4);color:#fff;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Precision Access
         </span>
       </div>
 
       <p class="hi h3" style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.72);max-width:520px;margin-bottom:36px;">
-        Two PMMA formulations. One comprehensive vertebroplasty solution. High-viscosity precision for targeted cases, low-viscosity speed for multi-level procedures — both with outstanding radiopacity and a 9+ minute injection window.
+        Precision access for kyphoplasty procedures. The Flex Drill's flexible design enables controlled cavity creation in the vertebral body, optimizing cement fill distribution when paired with G21 V-STEADY and V-FAST cement systems.
       </p>
 
       <!-- Stats bar -->
       <div class="hi h3" style="display:flex;gap:0;margin-bottom:40px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;max-width:460px;">
         <div style="flex:1;padding:18px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:#fff;line-height:1;">2</div>
-          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Viscosities</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1;">Flexible</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Drill Design</div>
         </div>
         <div style="flex:1;padding:18px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.08);">
-          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:var(--mint-green);line-height:1;">9+<span style="font-size:15px;font-weight:600;"> min</span></div>
-          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Injection Window</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:var(--mint-green);line-height:1;">Precision</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Cavity Creation</div>
         </div>
         <div style="flex:1;padding:18px 20px;text-align:center;">
           <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:#fff;line-height:1.1;">FDA</div>
-          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Approved</div>
+          <div style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:5px;">Cleared</div>
         </div>
       </div>
 
       <div class="hi h4" style="display:flex;gap:14px;flex-wrap:wrap;">
-        <a href="index.html#contact" class="btn-white">
+        <a href="#contact" class="btn-white">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Request Pricing
         </a>
@@ -149,21 +153,21 @@
     <div class="hero-img-col" style="display:flex;justify-content:center;align-items:center;">
       <div class="hi h3" style="background:#fff;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.12);padding:28px;max-width:380px;width:100%;position:relative;">
         <div style="position:absolute;top:-14px;right:20px;background:var(--deep-teal);border-radius:6px;padding:5px 14px;">
-          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">Vertebroplasty Cement System</span>
+          <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#fff;">Kyphoplasty Access</span>
         </div>
         <div style="width:100%;height:300px;background:linear-gradient(145deg,#f5f6f7 0%,#eceef0 40%,#e2e5e8 100%);border-radius:10px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
           <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(13,92,107,0.06),transparent 70%);"></div>
           <div style="position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.06),transparent 70%);"></div>
-          <img src="https://www.g-21.it/wp-content/uploads/2023/01/g21-vertebral-consolidation-bone-cements.jpg" alt="G21 V-STEADY and V-FAST Vertebroplasty Bone Cement" style="max-width:85%;max-height:260px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12)) drop-shadow(0 2px 6px rgba(0,0,0,0.06));position:relative;z-index:1;" />
+          <img src="brand_assets/flex-drill.jpg" alt="G21 Flex Drill Kyphoplasty Access Tool" style="max-width:85%;max-height:260px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12)) drop-shadow(0 2px 6px rgba(0,0,0,0.06));position:relative;z-index:1;" />
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <div>
-            <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);line-height:1.2;">V-STEADY™ &amp; V-FAST™</p>
-            <p style="font-size:12px;color:var(--text-gray);margin-top:3px;">PMMA Vertebroplasty Cement</p>
+            <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);line-height:1.2;">Flex Drill™</p>
+            <p style="font-size:12px;color:var(--text-gray);margin-top:3px;">Kyphoplasty Access Tool</p>
           </div>
           <div style="display:flex;gap:5px;flex-direction:column;align-items:flex-end;">
-            <div style="background:rgba(13,92,107,0.08);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--deep-teal);">High Viscosity</div>
-            <div style="background:rgba(91,184,154,0.12);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--brand-green);">Low Viscosity</div>
+            <div style="background:rgba(13,92,107,0.08);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--deep-teal);">Spine</div>
+            <div style="background:rgba(91,184,154,0.12);border-radius:5px;padding:4px 8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;color:var(--brand-green);">Kyphoplasty</div>
           </div>
         </div>
       </div>
@@ -184,11 +188,15 @@
     <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);">CE Marked</span>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">Kyphoplasty</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <span style="font-size:13px;color:rgba(255,255,255,0.6);">PMMA Formulation</span>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">Flexible Design</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(127,207,178,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,0.6);">G21 Cement Compatible</span>
       </div>
     </div>
   </div>
@@ -202,41 +210,41 @@
         <hr class="brand-rule" style="width:48px;margin-bottom:22px;" />
         <p class="eyebrow" style="margin-bottom:14px;">Key Differentiator</p>
         <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,3.5vw,40px);line-height:1.12;letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:20px;">
-          Two Viscosities.<br />
-          <span style="color:var(--brand-teal);">One Comprehensive Solution.</span>
+          Flexible Access.<br />
+          <span style="color:var(--brand-teal);">Optimal Cavity Creation.</span>
         </h2>
         <p style="font-size:15px;line-height:1.8;color:var(--text-gray);margin-bottom:28px;">
-          No single viscosity works for every case. V-STEADY™ delivers controlled high-viscosity flow for precise targeting, while V-FAST™'s lower viscosity enables confident delivery across multi-level procedures — all within a 9+ minute window that gives you time to work.
+          Traditional rigid drills limit access angles and cavity geometry. The Flex Drill's flexible shaft navigates vertebral anatomy to create a controlled, optimally shaped cavity — maximizing cement distribution and reducing the risk of extravasation when paired with G21 cement systems.
         </p>
-        <a href="index.html#contact" class="btn-outline">Request Product Info</a>
+        <a href="#contact" class="btn-outline">Request Product Info</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;">
-        <!-- V-STEADY card -->
+        <!-- Flex Drill card -->
         <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);overflow:hidden;position:relative;">
           <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--brand-teal);"></div>
           <div style="padding-left:16px;">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-              <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);">V-STEADY™</p>
-              <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(13,92,107,0.08);color:var(--deep-teal);padding:2px 8px;border-radius:4px;">High Viscosity</span>
+              <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);">Flex Drill™</p>
+              <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(13,92,107,0.08);color:var(--deep-teal);padding:2px 8px;border-radius:4px;">Access Tool</span>
             </div>
-            <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">Ideal for targeted single-level vertebroplasty where precise flow control and containment are critical.</p>
+            <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">Flexible drill for precision vertebral body access, creating a controlled cavity optimized for cement fill distribution.</p>
           </div>
         </div>
-        <!-- V-FAST card -->
+        <!-- V-STEADY pairing -->
         <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);overflow:hidden;position:relative;">
           <div style="position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--brand-green);"></div>
           <div style="padding-left:16px;">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-              <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);">V-FAST™</p>
-              <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(91,184,154,0.12);color:var(--brand-green);padding:2px 8px;border-radius:4px;">Low Viscosity</span>
+              <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);">V-STEADY™ Pairing</p>
+              <span style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:rgba(91,184,154,0.12);color:var(--brand-green);padding:2px 8px;border-radius:4px;">High Viscosity</span>
             </div>
-            <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">Suited for multi-level procedures — lower resistance enables efficient cement delivery across consecutive vertebral levels.</p>
+            <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">Pair with V-STEADY high-viscosity cement for targeted single-level kyphoplasty where precise flow control is critical.</p>
           </div>
         </div>
-        <!-- V-MIX system -->
+        <!-- V-FAST pairing -->
         <div style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--mid-teal);border-radius:8px;padding:20px 22px;box-shadow:0 2px 12px rgba(13,92,107,0.06);">
-          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:6px;">V-MIX™ Preparation System</p>
-          <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">PicoMix™ V mixer pairs with both formulations for safe, consistent preparation. Luer-lock transfer eliminates manual cement handling.</p>
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--charcoal);margin-bottom:6px;">V-FAST™ Pairing</p>
+          <p style="font-size:13px;line-height:1.65;color:var(--text-gray);">For multi-level procedures, pair with V-FAST low-viscosity cement for efficient cement delivery across consecutive vertebral levels.</p>
         </div>
       </div>
     </div>
@@ -249,57 +257,57 @@
     <div class="reveal d1" style="text-align:center;margin-bottom:52px;">
       <hr class="brand-rule" style="width:40px;margin:0 auto 18px;" />
       <p class="eyebrow" style="margin-bottom:12px;">Product Features</p>
-      <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);letter-spacing:-0.02em;color:var(--charcoal);">Designed for Controlled, Confident Delivery</h2>
+      <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);letter-spacing:-0.02em;color:var(--charcoal);">Engineered for Precision Kyphoplasty Access</h2>
     </div>
 
     <div class="r3c" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
 
       <div class="feat-card reveal d1">
         <div class="icon-circle" style="margin-bottom:18px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Two Viscosity Options</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">V-STEADY (high viscosity) and V-FAST (low viscosity) cover the full range of clinical vertebroplasty scenarios — one system for every case type.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Flexible Drill Shaft</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Flexible design navigates vertebral body anatomy for optimal access angles that rigid drills cannot achieve.</p>
       </div>
 
       <div class="feat-card reveal d2">
         <div class="icon-circle" style="margin-bottom:18px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Superior Radiopacity</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">High barium sulfate concentration delivers outstanding radioscopic contrast for real-time fluoroscopic visualization during injection.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Controlled Cavity Creation</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Creates a precisely shaped cavity within the vertebral body, optimizing the volume and geometry for uniform cement distribution.</p>
       </div>
 
       <div class="feat-card reveal d3">
         <div class="icon-circle" style="margin-bottom:18px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Low Polymerization Temperature</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Reduced exothermic reaction during polymerization minimizes thermal shock risk to adjacent vertebral tissue and neural structures.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">G21 Cement System Compatible</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Designed to pair seamlessly with G21 V-STEADY and V-FAST PMMA cement systems for a complete kyphoplasty workflow.</p>
       </div>
 
       <div class="feat-card reveal d4">
         <div class="icon-circle" style="margin-bottom:18px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">V-MIX™ Preparation System</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">PicoMix™ V mixer ensures safe, consistent cement preparation. Luer-lock syringe connection eliminates manual handling and reduces contamination risk.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">FDA Cleared</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Meets rigorous FDA regulatory standards for kyphoplasty access devices, ensuring safety and performance in clinical use.</p>
       </div>
 
       <div class="feat-card reveal d5">
         <div class="icon-circle" style="margin-bottom:18px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Extended Injection Window</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">9+ minute injection window gives the surgeon time for confident, controlled cement delivery at each level — without time pressure or premature setting.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Optimal Cement Fill</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Cavity geometry is engineered to promote even cement distribution, reducing the risk of extravasation and improving structural support.</p>
       </div>
 
       <div class="feat-card reveal d6">
         <div class="icon-circle" style="margin-bottom:18px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
         </div>
-        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">FDA Approved &amp; ISO 13485</h3>
-        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Both V-STEADY and V-FAST formulations meet rigorous international regulatory standards — FDA approved and CE marked for vertebral consolidation procedures.</p>
+        <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--charcoal);margin-bottom:10px;">Minimally Invasive</h3>
+        <p style="font-size:13px;line-height:1.75;color:var(--text-gray);">Designed for percutaneous kyphoplasty procedures, supporting minimally invasive access with reduced tissue disruption and faster recovery.</p>
       </div>
 
     </div>
@@ -315,54 +323,46 @@
       <div class="reveal d1">
         <hr class="brand-rule" style="width:40px;margin-bottom:20px;" />
         <p class="eyebrow" style="margin-bottom:12px;">Clinical Applications</p>
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:28px;">Where V-STEADY &amp; V-FAST Are Used</h2>
+        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,30px);letter-spacing:-0.02em;color:var(--charcoal);margin-bottom:28px;">Where Flex Drill™ Is Used</h2>
 
         <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:36px;">
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="color:var(--charcoal);">Balloon kyphoplasty procedures</span>
+          </div>
           <div class="check-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
             <span style="color:var(--charcoal);">Osteoporotic vertebral compression fractures (VCFs)</span>
           </div>
           <div class="check-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="color:var(--charcoal);">Malignant vertebral fractures (metastatic disease)</span>
+            <span style="color:var(--charcoal);">Vertebral body cavity preparation for cement augmentation</span>
           </div>
           <div class="check-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="color:var(--charcoal);">Benign vertebral lesions (hemangioma)</span>
+            <span style="color:var(--charcoal);">Multi-level kyphoplasty procedures</span>
           </div>
           <div class="check-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="color:var(--charcoal);">Kyphoplasty procedures</span>
-          </div>
-          <div class="check-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="color:var(--charcoal);">Multi-level vertebroplasty procedures (V-FAST)</span>
-          </div>
-          <div class="check-item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span style="color:var(--charcoal);">Office and hospital-based pain management settings</span>
+            <span style="color:var(--charcoal);">Hospital and ASC-based spine procedures</span>
           </div>
         </div>
 
-        <!-- V-MIX system note -->
+        <!-- Compatible systems note -->
         <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;">
-          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px;">V-MIX System Components</p>
+          <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);margin-bottom:16px;">Compatible G21 Cement Systems</p>
           <div style="display:flex;flex-direction:column;gap:10px;">
             <div class="check-item">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
-              <span style="font-size:13px;color:var(--text-gray);">PicoMix™ V mechanical mixing device</span>
+              <span style="font-size:13px;color:var(--text-gray);">V-STEADY™ — High viscosity PMMA for targeted single-level cases</span>
             </div>
             <div class="check-item">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
-              <span style="font-size:13px;color:var(--text-gray);">Pre-dosed PMMA powder component</span>
+              <span style="font-size:13px;color:var(--text-gray);">V-FAST™ — Low viscosity PMMA for multi-level procedures</span>
             </div>
             <div class="check-item">
               <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
-              <span style="font-size:13px;color:var(--text-gray);">Liquid monomer component</span>
-            </div>
-            <div class="check-item">
-              <div style="width:6px;height:6px;border-radius:50%;background:var(--brand-teal);flex-shrink:0;margin-top:7px;"></div>
-              <span style="font-size:13px;color:var(--text-gray);">Luer-lock injection syringes for safe cement transfer</span>
+              <span style="font-size:13px;color:var(--text-gray);">V-MIX™ — PicoMix™ V preparation system</span>
             </div>
           </div>
         </div>
@@ -376,36 +376,32 @@
 
         <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:8px 24px;box-shadow:0 2px 12px rgba(13,92,107,0.05);">
           <div class="spec-row">
-            <span class="spec-label">Products</span>
-            <span class="spec-value">V-STEADY™ (High), V-FAST™ (Low)</span>
+            <span class="spec-label">Product</span>
+            <span class="spec-value">Flex Drill™</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Composition</span>
-            <span class="spec-value">PMMA Bone Cement</span>
+            <span class="spec-label">Category</span>
+            <span class="spec-value">Kyphoplasty Access Tool</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Radiopaque Agent</span>
-            <span class="spec-value">Barium Sulfate — high concentration</span>
+            <span class="spec-label">Design</span>
+            <span class="spec-value">Flexible drill shaft</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Injection Window</span>
-            <span class="spec-value">9+ minutes (V-FAST)</span>
+            <span class="spec-label">Function</span>
+            <span class="spec-value">Vertebral body cavity creation</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Temperature</span>
-            <span class="spec-value">Low polymerization exotherm</span>
+            <span class="spec-label">Procedure</span>
+            <span class="spec-value">Kyphoplasty / Spine</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Mixing System</span>
-            <span class="spec-value">PicoMix™ V (V-MIX)</span>
+            <span class="spec-label">Compatible Cement</span>
+            <span class="spec-value">V-STEADY™, V-FAST™</span>
           </div>
           <div class="spec-row">
-            <span class="spec-label">Transfer</span>
-            <span class="spec-value">Luer-lock syringe connection</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-label">Certifications</span>
-            <span class="spec-value">FDA Approved, CE Mark, ISO 13485</span>
+            <span class="spec-label">Clearance</span>
+            <span class="spec-value">FDA Cleared</span>
           </div>
           <div class="spec-row">
             <span class="spec-label">Manufacturer</span>
@@ -418,53 +414,65 @@
   </div>
 </section>
 
-<!-- CTA / CONTACT -->
-<section id="contact" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);padding:80px 32px;position:relative;overflow:hidden;">
+<!-- CONTACT FORM -->
+<section id="contact" style="background:linear-gradient(150deg,#071e23 0%,#0a3d48 35%,#0d5c6b 65%,#1a7a8a 100%);padding:88px 32px;position:relative;overflow:hidden;">
   <div style="position:absolute;top:-15%;right:-5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.1) 0%,transparent 70%);pointer-events:none;"></div>
-  <div style="max-width:1300px;margin:0 auto;position:relative;z-index:1;">
-    <div class="r2c" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
-      <div class="reveal d1">
-        <p class="eyebrow" style="color:var(--mint-green);margin-bottom:12px;">Get Pricing Through Focus Medical</p>
-        <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,40px);line-height:1.1;letter-spacing:-0.03em;color:#fff;margin-bottom:20px;">Add V-STEADY&trade; &amp; V-FAST&trade;<br/>to Your Procedure Suite</h2>
-        <hr class="brand-rule" style="width:56px;margin-bottom:24px;" />
-        <p style="font-size:16px;line-height:1.8;color:rgba(255,255,255,0.62);margin-bottom:32px;">Focus Medical Corporation is the authorized distributor for G21 vertebroplasty cement products. Contact us to discuss pricing, GPO membership tiers, and clinical support.</p>
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GPO pricing — hospital-level rates for physician offices</span></div>
-          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Clinical support and training available</span></div>
-          <div class="check-item" style="color:rgba(255,255,255,0.72);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="9" cy="9" r="8" fill="rgba(127,207,178,0.15)"/><path d="M5.5 9l2.5 2.5 4.5-5" stroke="var(--mint-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We respond within one business day</span></div>
-        </div>
+  <div style="max-width:760px;margin:0 auto;position:relative;z-index:1;" class="reveal d1">
+    <div style="text-align:center;margin-bottom:40px;">
+      <hr class="brand-rule" style="width:40px;margin:0 auto 22px;" />
+      <p class="eyebrow" style="color:var(--mint-green);margin-bottom:14px;">Get Pricing Through Focus Medical</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin-bottom:18px;">
+        Add the Flex Drill™<br />to Your Kyphoplasty Suite
+      </h2>
+      <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:540px;margin-left:auto;margin-right:auto;">
+        Focus Medical Corporation is the authorized distributor for G21 kyphoplasty products. Contact us to discuss pricing, GPO membership tiers, and clinical support.
+      </p>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:40px;">
+      <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:22px;">Contact Our Team</h3>
+      <div id="form-success" style="display:none;background:rgba(91,184,154,0.15);border:1px solid rgba(91,184,154,0.5);border-radius:8px;padding:28px;text-align:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style="color:#7FCFB2;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:#fff;margin-bottom:6px;">Message Sent!</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);">We'll be in touch within one business day.</p>
       </div>
-      <div class="reveal d2">
-        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:36px 32px;backdrop-filter:blur(8px);">
-          <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:24px;">Request Pricing &amp; Information</h3>
-          <form id="product-form" style="display:flex;flex-direction:column;gap:16px;">
-            <input type="hidden" name="_subject" value="Focus Medical Inquiry — G21 Cement" />
-            <input type="hidden" name="page_source" value="g21-cement.html" />
-            <input type="hidden" name="_template" value="table" />
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-              <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">First Name *</label><input type="text" name="firstName" placeholder="Jane" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
-              <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Last Name</label><input type="text" name="lastName" placeholder="Smith" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
-            </div>
-            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Email *</label><input type="email" name="email" placeholder="jane@practice.com" required style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
-            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Phone Number</label><input type="tel" name="phone" placeholder="(555) 000-0000" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
-            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">Practice / Facility</label><input type="text" name="practice" placeholder="Pain Management Associates" style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" /></div>
-            <div><label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);display:block;margin-bottom:6px;">I'm Interested In</label><textarea name="message" rows="3" placeholder="GPO pricing, product samples, clinical data..." style="width:100%;padding:11px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:#fff;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;resize:vertical;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea></div>
-            <button type="submit" id="form-submit-btn" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--brand-teal);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:15px 28px;border-radius:4px;border:none;cursor:pointer;transition:background 0.2s ease,transform 0.15s ease;box-shadow:0 4px 16px rgba(26,122,138,0.35);">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Request
-            </button>
-            <p style="font-size:11px;color:rgba(255,255,255,0.4);text-align:center;">Your information is never shared with third parties.</p>
-          </form>
-          <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:rgba(91,184,154,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--mint-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <h3 style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;color:#fff;margin-bottom:8px;">Request Sent!</h3>
-            <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;">Thank you for your interest. Our team will follow up within one business day.</p>
+      <form id="contact-form" style="display:flex;flex-direction:column;gap:16px;">
+        <input type="hidden" name="_subject" value="Focus Medical Inquiry — Flex Drill" />
+        <input type="hidden" name="page_source" value="flex-drill.html" />
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">First Name</label>
+            <input type="text" name="first_name" required placeholder="First name" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
           </div>
-          <div id="form-error" style="display:none;text-align:center;padding:16px;margin-top:12px;background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);border-radius:6px;">
-            <p style="font-size:13px;color:#fca5a5;font-family:'Montserrat',sans-serif;font-weight:600;">Something went wrong. Please try again or email us directly.</p>
+          <div>
+            <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">Last Name</label>
+            <input type="text" name="last_name" required placeholder="Last name" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
           </div>
         </div>
-      </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">Email</label>
+            <input type="email" name="email" required placeholder="you@practice.com" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+          </div>
+          <div>
+            <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">Phone Number</label>
+            <input type="tel" name="phone" placeholder="(555) 555-5555" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+          </div>
+        </div>
+        <div>
+          <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">Practice / Facility</label>
+          <input type="text" name="practice" placeholder="Practice or facility name" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" />
+        </div>
+        <div>
+          <label style="font-family:'Montserrat',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:6px;">I'm Interested In</label>
+          <textarea name="message" rows="3" placeholder="Flex Drill pricing, kyphoplasty kit details, GPO membership..." style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:10px 13px;color:#fff;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;resize:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(127,207,178,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+        </div>
+        <div id="form-error" style="display:none;background:rgba(220,50,50,0.15);border:1px solid rgba(220,50,50,0.4);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.8);">Something went wrong. Please try again or email us directly.</div>
+        <button type="submit" id="contact-submit" class="btn-white" style="width:100%;justify-content:center;">
+          Send Message
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
     </div>
   </div>
 </section>
@@ -483,7 +491,8 @@
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
           <li><a href="index.html#cement" class="ft-link">Cement Portfolio</a></li>
           <li><a href="index.html#products" class="ft-link">All Products</a></li>
-          <li><a href="vertefix-mv.html" class="ft-link">Vertefix® MV</a></li>
+          <li><a href="g21-cement.html" class="ft-link">V-STEADY &amp; V-FAST</a></li>
+          <li><a href="flex-drill.html" class="ft-link">Flex Drill</a></li>
         </ul>
       </div>
       <div>
@@ -496,45 +505,84 @@
       </div>
     </div>
     <div class="footer-bar" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <p style="font-size:12px;color:rgba(255,255,255,0.24);">© 2025 Focus Medical Corporation. All rights reserved.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.24);">&copy; 2025 Focus Medical Corporation. All rights reserved.</p>
       <div style="display:flex;gap:18px;"><a href="#" class="ft-link" style="font-size:12px;">Privacy Policy</a><a href="#" class="ft-link" style="font-size:12px;">Regulatory Information</a></div>
     </div>
   </div>
 </footer>
 
 <script>
+  // Scroll reveal observer
   document.documentElement.classList.add('js-loaded');
-  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  var nt=document.getElementById('nav-toggle');var nl=document.getElementById('nav-links');
-  if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open');nt.setAttribute('aria-expanded',nl.classList.contains('open'));});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');nt.setAttribute('aria-expanded','false');});});}
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+
+  // Mobile nav toggle
+  var nt = document.getElementById('nav-toggle');
+  var nl = document.getElementById('nav-links');
+  if (nt && nl) {
+    nt.addEventListener('click', function() {
+      nl.classList.toggle('open');
+      nt.setAttribute('aria-expanded', nl.classList.contains('open'));
+    });
+    nl.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        nl.classList.remove('open');
+        nt.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Contact form — FormSubmit.co AJAX
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('contact-submit');
+      var errDiv = document.getElementById('form-error');
+      btn.disabled = true;
+      btn.innerHTML = 'Sending&hellip;';
+      errDiv.style.display = 'none';
+
+      var data = {
+        first_name: contactForm.querySelector('[name=first_name]').value,
+        last_name: contactForm.querySelector('[name=last_name]').value,
+        email: contactForm.querySelector('[name=email]').value,
+        phone: contactForm.querySelector('[name=phone]').value,
+        practice: contactForm.querySelector('[name=practice]').value,
+        message: contactForm.querySelector('[name=message]').value,
+        _subject: 'Focus Medical Inquiry — Flex Drill',
+        page_source: 'flex-drill.html'
+      };
+
+      fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if (d.success === 'true' || d.success === true) {
+          contactForm.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = 'Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+          errDiv.style.display = 'block';
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        errDiv.style.display = 'block';
+      });
+    });
+  }
 </script>
 
-<script>
-(function(){
-  var form=document.getElementById('product-form');if(!form)return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var btn=document.getElementById('form-submit-btn');
-    var successDiv=document.getElementById('form-success');
-    var errorDiv=document.getElementById('form-error');
-    btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='0.7';
-    errorDiv.style.display='none';
-    var data={};var fd=new FormData(form);fd.forEach(function(v,k){data[k]=v;});
-    fetch('https://formsubmit.co/ajax/tkiesnowski@dragon-analytics.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(data)
-    }).then(function(r){return r.json();}).then(function(result){
-      if(result.success){form.style.display='none';successDiv.style.display='block';}
-      else{throw new Error('fail');}
-    }).catch(function(){
-      errorDiv.style.display='block';
-      btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Request';
-      btn.disabled=false;btn.style.opacity='1';
-    });
-  });
-})();
-</script>
 </body>
 </html>
