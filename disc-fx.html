@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Disc-FX® System — Focus Medical Corporation</title>
+  <title>Disc-FX® Percutaneous Discectomy | Focus Medical</title>
   <meta name="description" content="Disc-FX® minimally invasive discectomy system by Elliquence. 3.0mm working portal, three treatment modalities, outpatient capable. Available through Focus Medical Corporation." />
   <meta property="og:title" content="Disc-FX® System | Focus Medical Corporation" />
   <meta property="og:description" content="Disc-FX® minimally invasive percutaneous discectomy system by Elliquence — 3.0mm working portal with three treatment modalities. GPO pricing through Focus Medical." />
@@ -68,7 +68,7 @@
       header nav{padding-left:20px !important;padding-right:20px !important;}
       #nav-cta-desktop{display:none !important;}
       .nav-mobile-btn{display:flex !important;align-items:center;justify-content:center;}
-      #nav-links{display:none !important;flex-direction:column !important;align-items:flex-start !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;bottom:0 !important;background:rgba(9,54,63,0.98) !important;backdrop-filter:blur(16px) !important;padding:28px 24px !important;gap:0 !important;border-top:1px solid rgba(255,255,255,0.1) !important;z-index:98 !important;overflow-y:auto !important;}
+      #nav-links{display:none !important;flex-direction:column !important;align-items:flex-start !important;position:fixed !important;top:68px !important;left:0 !important;right:0 !important;height:calc(100vh - 68px) !important;height:calc(100dvh - 68px) !important;background:rgba(9,54,63,0.98) !important;backdrop-filter:blur(16px) !important;padding:28px 24px !important;gap:0 !important;border-top:1px solid rgba(255,255,255,0.1) !important;z-index:98 !important;overflow-y:auto !important;}
       #nav-links.open{display:flex !important;}
       #nav-links .nav-link{font-size:17px !important;padding:14px 0 !important;width:100%;border-bottom:1px solid rgba(255,255,255,0.07) !important;}
       .nav-mobile-cta{display:inline-flex !important;margin-top:20px !important;width:100% !important;justify-content:center !important;}
@@ -85,7 +85,7 @@
       .trust-bar-item{border-left:none !important;border-top:1px solid var(--border) !important;width:50% !important;padding:14px 16px !important;}
     }
     @media(max-width:520px){.footer-grid{grid-template-columns:1fr !important;}.trust-bar-item{width:100% !important;}}
-  </style>
+  .nav-mobile-btn .icon-close{display:none;}#nav-links.open ~ .nav-mobile-btn .icon-open{display:none;}#nav-links.open ~ .nav-mobile-btn .icon-close{display:block;}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,6 +115,26 @@
     "purpose": "Minimally invasive percutaneous discectomy"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Products",
+        "item": "https://www.focusmedicalcorporation.com/#products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "MIS Discectomy",
+        "item": "https://www.focusmedicalcorporation.com/disc-fx.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -130,9 +150,7 @@
       <a href="#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
     </div>
     <a href="#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
-    <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+    <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
   </nav>
 </header>
 

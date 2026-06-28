@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vertefix® MV — Medium Viscosity Bone Cement | Focus Medical Corporation</title>
+  <title>Vertefix® MV Medium-Viscosity Bone Cement | Focus Medical</title>
   <meta name="description" content="Vertefix MV medium viscosity bone cement for vertebroplasty and kyphoplasty. GPO pricing through Focus Medical Corporation." />
   <meta property="og:title" content="Vertefix® MV — Medium Viscosity Bone Cement | Focus Medical Corporation" />
   <meta property="og:description" content="Vertefix MV medium viscosity bone cement for vertebroplasty and kyphoplasty. GPO pricing through Focus Medical Corporation." />
@@ -157,7 +157,7 @@
       header nav { padding-left: 20px !important; padding-right: 20px !important; }
       #nav-cta-desktop { display: none !important; }
       .nav-mobile-btn { display: flex !important; align-items: center; justify-content: center; }
-      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 68px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 28px 24px !important; gap: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; z-index: 98 !important; overflow-y: auto !important; }
+      #nav-links { display: none !important; flex-direction: column !important; align-items: flex-start !important; position: fixed !important; top: 68px !important; left: 0 !important; right: 0 !important; height:calc(100vh - 68px) !important;height:calc(100dvh - 68px) !important; background: rgba(9,54,63,0.98) !important; backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; padding: 28px 24px !important; gap: 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; z-index: 98 !important; overflow-y: auto !important; }
       #nav-links.open { display: flex !important; }
       #nav-links .nav-link { font-size: 17px !important; padding: 14px 0 !important; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
       .nav-mobile-cta { display: inline-flex !important; margin-top: 20px !important; width: 100% !important; justify-content: center !important; }
@@ -174,7 +174,7 @@
     @media (max-width: 520px) {
       .footer-grid { grid-template-columns: 1fr !important; }
     }
-  </style>
+  .nav-mobile-btn .icon-close{display:none;}#nav-links.open ~ .nav-mobile-btn .icon-open{display:none;}#nav-links.open ~ .nav-mobile-btn .icon-close{display:block;}</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -204,6 +204,32 @@
     "purpose": "Vertebroplasty and kyphoplasty"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.focusmedicalcorporation.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://www.focusmedicalcorporation.com/#products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Vertefix MV",
+        "item": "https://www.focusmedicalcorporation.com/vertefix-mv.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -223,11 +249,7 @@
         <a href="/#contact" class="btn-white nav-mobile-cta" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
       </div>
       <a href="/#contact" id="nav-cta-desktop" class="btn-white" style="padding:9px 20px;font-size:12px;border-radius:4px;">Request Pricing</a>
-      <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
+      <button class="nav-mobile-btn" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button>
     </nav>
   </header>
 
@@ -296,8 +318,8 @@
             <div style="width:100%;height:300px;background:linear-gradient(145deg,#f5f6f7 0%,#eceef0 40%,#e2e5e8 100%);border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
               <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(13,92,107,0.06),transparent 70%);"></div>
               <div style="position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,154,0.06),transparent 70%);"></div>
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/c1593c56-58dc-432b-9644-e74cd847e8d3/IZIMed_Cement_Pkg_VertefixMV+whole3.jpg"
+              <img width="2411" height="1620"
+                src="brand_assets/vertefix-mv-whole.jpg"
                 alt="Vertefix MV bone cement package — IZI Medical"
                 style="max-width:85%;max-height:260px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12)) drop-shadow(0 2px 6px rgba(0,0,0,0.06));position:relative;z-index:1;"
                 onerror="this.src='https://placehold.co/400x280/F4F6F7/1A7A8A?text=Vertefix%C2%AE+MV'"
@@ -493,8 +515,8 @@
       <!-- Right: product box image + compatible systems -->
       <div class="reveal d2" style="display:flex;flex-direction:column;gap:32px;">
         <div style="position:relative;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--light-gray),#e2edf0);">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/5cba31329b8fe86db05fc0eb/dabe7842-cb62-4540-a155-405a116c5262/IZIMed_Cement_Pkg_VertefixMV+box.jpg"
+          <img width="1835" height="1680"
+            src="brand_assets/vertefix-mv-box.jpg"
             alt="Vertefix MV box packaging"
             style="width:100%;max-height:320px;object-fit:contain;padding:32px;display:block;"
             onerror="this.src='https://placehold.co/500x320/E8F4F6/1A7A8A?text=Vertefix%C2%AE+MV+Packaging'"
